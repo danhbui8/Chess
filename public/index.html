@@ -7,7 +7,11 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',sans-serif;background:#1a1a2e;color:#e0e0e0;min-height:100vh;}
-header{background:linear-gradient(135deg,#16213e,#0f3460);padding:24px 40px;border-bottom:2px solid #e94560;text-align:center;}
+header{background:linear-gradient(135deg,#16213e,#0f3460);padding:24px 40px 20px;border-bottom:2px solid #e94560;text-align:center;position:relative;}
+.lang-switcher{position:absolute;top:16px;right:20px;display:flex;align-items:center;gap:0;background:#0f3460;border-radius:20px;overflow:hidden;border:1px solid #2a5090;}
+.lang-btn{padding:5px 14px;font-size:.8rem;font-weight:700;cursor:pointer;border:none;background:none;color:#7090a0;transition:all .15s;}
+.lang-btn.active{background:#e94560;color:#fff;}
+.lang-sep{color:#2a5090;font-size:.85rem;pointer-events:none;}
 header h1{font-size:2rem;color:#f5c842;letter-spacing:2px;}
 header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
 .tab-bar{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:16px 20px 0;background:#16213e;}
@@ -101,28 +105,33 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
 </head>
 <body>
 <header>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('vi')">VI</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
   <h1>♟️ Chess Openings Guide</h1>
-  <p>Học khai cuộc cờ vua – Từ cơ bản đến nâng cao</p>
+  <p data-i18n="subtitle">Học khai cuộc cờ vua – Từ cơ bản đến nâng cao</p>
 </header>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab(event,'basics')">📚 Nguyên Lý Cơ Bản</button>
+  <button class="tab-btn active" onclick="switchTab(event,'basics')" data-i18n="tab.basics">📚 Nguyên Lý Cơ Bản</button>
   <button class="tab-btn" onclick="switchTab(event,'openings')">♟️ Openings (White)</button>
   <button class="tab-btn" onclick="switchTab(event,'black')">⚫ Counter-Attacks (Black)</button>
-  <button class="tab-btn" onclick="switchTab(event,'practice')">⚔️ Luyện Tập</button>
-  <button class="tab-btn" onclick="switchTab(event,'history')">📜 Lịch Sử</button>
+  <button class="tab-btn" onclick="switchTab(event,'practice')" data-i18n="tab.practice">⚔️ Luyện Tập</button>
+  <button class="tab-btn" onclick="switchTab(event,'history')" data-i18n="tab.history">📜 Lịch Sử</button>
 </div>
 
 <!-- BASICS -->
 <div id="tab-basics" class="tab-content active" style="max-width:1200px;margin:0 auto;padding:30px 20px;">
-  <div class="sec"><h3>🎯 Mục Tiêu Của Khai Cuộc</h3><p>Trong giai đoạn khai cuộc, mục tiêu không phải là <strong style="color:#f5c842">chiếu hết ngay</strong> — mà là xây dựng nền tảng vững chắc cho middlegame.</p></div>
+  <div class="sec" data-section="goal"><h3 data-i18n="basics.goal.title">🎯 Mục Tiêu Của Khai Cuộc</h3><p data-i18n="basics.goal.text">Trong giai đoạn khai cuộc, mục tiêu không phải là <strong style="color:#f5c842">chiếu hết ngay</strong> — mà là xây dựng nền tảng vững chắc cho middlegame.</p></div>
   <div class="cgrid">
-    <div class="ci"><div class="cico">🏰</div><div class="ctit">Kiểm soát trung tâm</div><div class="cdesc">Các ô e4,e5,d4,d5 là trung tâm. Quân chiếm trung tâm có tầm hoạt động rộng hơn.</div></div>
-    <div class="ci"><div class="cico">⚡</div><div class="ctit">Phát triển quân nhanh</div><div class="cdesc">Đưa Mã và Tượng ra sớm. Không đi cùng 1 quân 2 lần liên tiếp nếu không cần thiết.</div></div>
-    <div class="ci"><div class="cico">👑</div><div class="ctit">An toàn Vua (Castle sớm)</div><div class="cdesc">Nhập thành đưa Vua vào vị trí an toàn ở góc bàn cờ, kích hoạt Xe tham chiến.</div></div>
-    <div class="ci"><div class="cico">🚫</div><div class="ctit">Không đi Hậu quá sớm</div><div class="cdesc">Hậu đi sớm dễ bị tấn công, mất tempo. Chỉ đi khi có mục đích rõ ràng.</div></div>
+    <div class="ci"><div class="cico">🏰</div><div class="ctit" data-i18n="ci.center">Kiểm soát trung tâm</div><div class="cdesc" data-i18n="ci.center.desc">Các ô e4,e5,d4,d5 là trung tâm. Quân chiếm trung tâm có tầm hoạt động rộng hơn.</div></div>
+    <div class="ci"><div class="cico">⚡</div><div class="ctit" data-i18n="ci.develop">Phát triển quân nhanh</div><div class="cdesc" data-i18n="ci.develop.desc">Đưa Mã và Tượng ra sớm. Không đi cùng 1 quân 2 lần liên tiếp nếu không cần thiết.</div></div>
+    <div class="ci"><div class="cico">👑</div><div class="ctit" data-i18n="ci.king">An toàn Vua (Castle sớm)</div><div class="cdesc" data-i18n="ci.king.desc">Nhập thành đưa Vua vào vị trí an toàn ở góc bàn cờ, kích hoạt Xe tham chiến.</div></div>
+    <div class="ci"><div class="cico">🚫</div><div class="ctit" data-i18n="ci.queen">Không đi Hậu quá sớm</div><div class="cdesc" data-i18n="ci.queen.desc">Hậu đi sớm dễ bị tấn công, mất tempo. Chỉ đi khi có mục đích rõ ràng.</div></div>
   </div>
-  <div class="sec"><h3>📋 10 Nguyên Tắc Khai Cuộc</h3>
-    <p style="color:#7090a0;font-size:.83rem;margin-bottom:14px;">👆 Bấm vào từng nguyên tắc để xem lý do và lợi ích</p>
+  <div class="sec"><h3 data-i18n="basics.principles.title">📋 10 Nguyên Tắc Khai Cuộc</h3>
+    <p style="color:#7090a0;font-size:.83rem;margin-bottom:14px;" data-i18n="basics.principles.hint">👆 Bấm vào từng nguyên tắc để xem lý do và lợi ích</p>
 
     <div class="acc">
       <div class="acc-head" onclick="toggleAcc(this)">
@@ -245,7 +254,7 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
     </div>
 
   </div>
-  <div class="sec"><h3>📊 Phân Loại Opening</h3>
+  <div class="sec" data-section="types"><h3 data-i18n="basics.types.title">📊 Phân Loại Opening</h3>
     <div class="bgrid">
       <div class="bcard"><div class="bico">⚔️</div><h3>Open Games (1.e4 e5)</h3><p>Chơi trực tiếp, nhiều chiến thuật. Phù hợp người mới học vì logic rõ ràng.</p></div>
       <div class="bcard"><div class="bico">🛡️</div><h3>Semi-Open (1.e4 ≠ e5)</h3><p>Đen không đối xứng ngay, tạo counterplay riêng. VD: Sicilian, French, Caro-Kann.</p></div>
@@ -259,10 +268,10 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
 <div id="tab-history" class="tab-content">
   <div style="max-width:900px;margin:0 auto;padding:28px 20px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:10px;">
-      <h2 style="color:#f5c842;font-size:1.2rem;">📜 Lịch Sử Ván Cờ</h2>
+      <h2 style="color:#f5c842;font-size:1.2rem;" data-i18n="history.title">📜 Lịch Sử Ván Cờ</h2>
       <div style="display:flex;gap:8px;">
-        <button class="gbtn" onclick="loadHistory()">🔄 Tải lại</button>
-        <button class="gbtn" style="border-color:#f44336;color:#f44336;" onclick="clearHistory()">🗑️ Xoá tất cả</button>
+        <button class="gbtn" onclick="loadHistory()" data-i18n="history.reload">🔄 Tải lại</button>
+        <button class="gbtn" style="border-color:#f44336;color:#f44336;" onclick="clearHistory()" data-i18n="history.clear">🗑️ Xoá tất cả</button>
       </div>
     </div>
     <div id="history-list"><div style="color:#5f7f9f;text-align:center;padding:40px;">Đang tải...</div></div>
@@ -292,26 +301,26 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
       <div class="gstatus" id="gstatus">Lượt đi: <strong>⬜ Trắng</strong></div>
       <div id="gboard"></div>
       <div class="gbtns">
-        <button class="gbtn" onclick="initGame()">🔄 Ván Mới</button>
-        <button class="gbtn" onclick="undoMove()">↩ Hoàn Tác</button>
-        <button class="gbtn" onclick="copyPGN()">📋 Copy PGN</button>
-        <button class="gbtn" style="border-color:#4caf50;color:#4caf50;" onclick="saveGame()">💾 Lưu Ván</button>
+        <button class="gbtn" onclick="initGame()" data-i18n="btn.new">🔄 Ván Mới</button>
+        <button class="gbtn" onclick="undoMove()" data-i18n="btn.undo">↩ Hoàn Tác</button>
+        <button class="gbtn" onclick="copyPGN()" data-i18n="btn.pgn">📋 Copy PGN</button>
+        <button class="gbtn" style="border-color:#4caf50;color:#4caf50;" onclick="saveGame()" data-i18n="btn.save">💾 Lưu Ván</button>
         <span id="pgncopy" style="color:#4caf50;font-size:.85rem;line-height:34px;"></span>
       </div>
       <textarea id="pgntxt" style="display:none;width:100%;margin-top:8px;background:#0f3460;color:#c0d0e0;border:1px solid #2a5090;border-radius:6px;padding:8px;font-size:.8rem;font-family:monospace;" rows="3"></textarea>
     </div>
     <div class="pinfo">
       <div class="ibox">
-        <h3>📝 Bản Ghi Nước Đi</h3>
+        <h3 data-i18n="game.moves.title">📝 Bản Ghi Nước Đi</h3>
         <div id="gmoves" class="mlist" style="max-height:300px;overflow-y:auto;"><div style="color:#5f7f9f;font-size:.82rem;padding:6px;">Chưa có nước đi...</div></div>
       </div>
       <div class="ibox">
-        <h3>⚔️ Quân Bị Ăn</h3>
+        <h3 data-i18n="game.captured.title">⚔️ Quân Bị Ăn</h3>
         <div id="capw" style="font-size:22px;min-height:28px;margin-bottom:4px;"></div>
         <div id="capb" style="font-size:22px;min-height:28px;"></div>
       </div>
       <div class="ibox">
-        <h3>🎓 Hướng Dẫn</h3>
+        <h3 data-i18n="game.guide.title">🎓 Hướng Dẫn</h3>
         <ul style="list-style:none;color:#90a8b8;font-size:.82rem;line-height:2;">
           <li>🖱️ Click quân để chọn</li>
           <li>🟡 Ô vàng = quân đang chọn</li>
@@ -325,6 +334,161 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
 </div>
 
 <script>
+
+// ==== LANGUAGE / I18N ====
+let LANG = localStorage.getItem('chess_lang') || 'vi';
+
+const T = {
+  vi: {
+    'subtitle': 'Học khai cuộc cờ vua – Từ cơ bản đến nâng cao',
+    'tab.basics': '📚 Nguyên Lý Cơ Bản',
+    'tab.practice': '⚔️ Luyện Tập',
+    'tab.history': '📜 Lịch Sử',
+    'basics.goal.title': '🎯 Mục Tiêu Của Khai Cuộc',
+    'basics.goal.text': 'Trong giai đoạn khai cuộc, mục tiêu không phải là <strong style="color:#f5c842">chiếu hết ngay</strong> — mà là xây dựng nền tảng vững chắc cho middlegame.',
+    'basics.principles.title': '📋 10 Nguyên Tắc Khai Cuộc',
+    'basics.principles.hint': '👆 Bấm vào từng nguyên tắc để xem lý do và lợi ích',
+    'basics.types.title': '📊 Phân Loại Opening',
+    'p1': 'Kiểm soát trung tâm bằng tốt (e4 hoặc d4)', 'p2': 'Phát triển Mã trước Tượng',
+    'p3': 'Không đi cùng một quân 2 lần trong khai cuộc', 'p4': 'Nhập thành sớm để bảo vệ Vua',
+    'p5': 'Không đưa Hậu ra quá sớm', 'p6': 'Mở đường cho Tượng trước khi nhập thành',
+    'p7': 'Kết nối hai Xe sau khi nhập thành', 'p8': 'Mỗi nước đi phải có mục đích rõ ràng',
+    'p9': 'Đừng ăn tốt vô nghĩa — mất tempo là mất lợi thế', 'p10': 'Tìm hiểu ý định của đối thủ sau mỗi nước đi',
+    'btn.new': '🔄 Ván Mới', 'btn.undo': '↩ Hoàn Tác', 'btn.pgn': '📋 Copy PGN', 'btn.save': '💾 Lưu Ván',
+    'game.turn.white': '⬜ Trắng', 'game.turn.black': '⬛ Đen',
+    'game.status.check': '⚠️ {side} đang bị chiếu!',
+    'game.status.checkmate': '♔ Chiếu hết! {side} thắng!',
+    'game.status.stalemate': '🤝 Pat! Hòa cờ!',
+    'game.status.turn': 'Lượt đi: <strong>{side}</strong>',
+    'game.moves.title': '📝 Bản Ghi Nước Đi',
+    'game.captured.title': '⚔️ Quân Bị Ăn',
+    'game.guide.title': '🎓 Hướng Dẫn',
+    'game.captured.white': 'Trắng ăn: ', 'game.captured.black': 'Đen ăn: ',
+    'section.why': '💭 Tại Sao Chơi Opening Này?', 'section.ideas': '🎯 Ý Tưởng Chiến Lược',
+    'section.proscons': '⚖️ Điểm Mạnh / Yếu', 'section.vars': '🌿 Biến Thể',
+    'section.why.black': '💭 Tại Sao Đen Chơi Thế Này?', 'section.ideas.black': '🎯 Kế Hoạch Phản Công',
+    'label.strong': '✅ MẠNH', 'label.weak': '❌ YẾU',
+    'label.moves': '🎯 Các Nước Đi',
+    'diff.beginner': 'Cơ bản', 'diff.intermediate': 'Trung cấp', 'diff.advanced': 'Nâng cao',
+    'history.title': '📜 Lịch Sử Ván Cờ', 'history.reload': '🔄 Tải lại', 'history.clear': '🗑️ Xoá tất cả',
+    'history.empty': 'Chưa có ván cờ nào được lưu.', 'history.loading': 'Đang tải...',
+    'history.moves': 'nước', 'history.noserver': '❌ Không thể kết nối server tại localhost:3001',
+    'pgn.copied': '✓ Đã copy!', 'game.saved': '✓ Đã lưu vào MongoDB!',
+    'guide.click': '🖱️ Click quân để chọn', 'guide.yellow': '🟡 Ô vàng = quân đang chọn',
+    'guide.dot': '⚫ Chấm = nước đi hợp lệ', 'guide.red': '🔴 Vua đỏ = đang bị chiếu', 'guide.undo': '↩ Hoàn tác để đi lại',
+    'ci.center': 'Kiểm soát trung tâm', 'ci.center.desc': 'Các ô e4,e5,d4,d5 là trung tâm. Quân chiếm trung tâm có tầm hoạt động rộng hơn.',
+    'ci.develop': 'Phát triển quân nhanh', 'ci.develop.desc': 'Đưa Mã và Tượng ra sớm. Không đi cùng 1 quân 2 lần liên tiếp nếu không cần thiết.',
+    'ci.king': 'An toàn Vua (Castle sớm)', 'ci.king.desc': 'Nhập thành đưa Vua vào vị trí an toàn ở góc bàn cờ, kích hoạt Xe tham chiến.',
+    'ci.queen': 'Không đi Hậu quá sớm', 'ci.queen.desc': 'Hậu đi sớm dễ bị tấn công, mất tempo. Chỉ đi khi có mục đích rõ ràng.',
+  },
+  en: {
+    'subtitle': 'Learn chess openings – From basics to advanced',
+    'tab.basics': '📚 Basic Principles',
+    'tab.practice': '⚔️ Practice',
+    'tab.history': '📜 History',
+    'basics.goal.title': '🎯 Opening Goals',
+    'basics.goal.text': 'In the opening, the goal is not to <strong style="color:#f5c842">checkmate immediately</strong> — but to build a solid foundation for the middlegame.',
+    'basics.principles.title': '📋 10 Opening Principles',
+    'basics.principles.hint': '👆 Click each principle to see why it matters',
+    'basics.types.title': '📊 Opening Categories',
+    'p1': 'Control the center with pawns (e4 or d4)', 'p2': 'Develop Knights before Bishops',
+    'p3': "Don't move the same piece twice in the opening", 'p4': 'Castle early to protect your King',
+    'p5': "Don't bring the Queen out too early", 'p6': 'Clear the way for Bishops before castling',
+    'p7': 'Connect your Rooks after castling', 'p8': 'Every move must have a clear purpose',
+    'p9': "Don't capture pawns aimlessly — losing tempo loses advantage", 'p10': "Understand your opponent's intention after each move",
+    'btn.new': '🔄 New Game', 'btn.undo': '↩ Undo', 'btn.pgn': '📋 Copy PGN', 'btn.save': '💾 Save Game',
+    'game.turn.white': '⬜ White', 'game.turn.black': '⬛ Black',
+    'game.status.check': '⚠️ {side} is in check!',
+    'game.status.checkmate': '♔ Checkmate! {side} wins!',
+    'game.status.stalemate': '🤝 Stalemate! Draw!',
+    'game.status.turn': 'Turn: <strong>{side}</strong>',
+    'game.moves.title': '📝 Move Record',
+    'game.captured.title': '⚔️ Captured Pieces',
+    'game.guide.title': '🎓 Guide',
+    'game.captured.white': 'White captured: ', 'game.captured.black': 'Black captured: ',
+    'section.why': '💭 Why Play This Opening?', 'section.ideas': '🎯 Strategic Ideas',
+    'section.proscons': '⚖️ Pros / Cons', 'section.vars': '🌿 Variations',
+    'section.why.black': '💭 Why Does Black Play This?', 'section.ideas.black': '🎯 Counter-Attack Plan',
+    'label.strong': '✅ PROS', 'label.weak': '❌ CONS',
+    'label.moves': '🎯 Moves',
+    'diff.beginner': 'Beginner', 'diff.intermediate': 'Intermediate', 'diff.advanced': 'Advanced',
+    'history.title': '📜 Game History', 'history.reload': '🔄 Reload', 'history.clear': '🗑️ Clear All',
+    'history.empty': 'No games saved yet.', 'history.loading': 'Loading...',
+    'history.moves': 'moves', 'history.noserver': '❌ Cannot connect to server at localhost:3001',
+    'pgn.copied': '✓ Copied!', 'game.saved': '✓ Saved to MongoDB!',
+    'guide.click': '🖱️ Click a piece to select', 'guide.yellow': '🟡 Yellow = selected piece',
+    'guide.dot': '⚫ Dot = valid move', 'guide.red': '🔴 Red King = in check', 'guide.undo': '↩ Undo to take back',
+    'ci.center': 'Control the center', 'ci.center.desc': 'The squares e4,e5,d4,d5 are the center. Pieces in the center have wider range.',
+    'ci.develop': 'Develop pieces quickly', 'ci.develop.desc': 'Bring Knights and Bishops out early. Never move the same piece twice without reason.',
+    'ci.king': 'King safety (Castle early)', 'ci.king.desc': 'Castling puts the King in a safe corner and activates the Rook.',
+    'ci.queen': "Don't bring the Queen out early", 'ci.queen.desc': 'Early Queen is easily attacked, losing tempo. Only move it with a clear purpose.',
+  }
+};
+
+function t(key, vars) {
+  let str = (T[LANG] || T.vi)[key] || (T.vi)[key] || key;
+  if (vars) Object.entries(vars).forEach(([k,v]) => { str = str.replace('{'+k+'}', v); });
+  return str;
+}
+
+function setLang(lang) {
+  LANG = lang;
+  localStorage.setItem('chess_lang', lang);
+  // Update switcher buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+  });
+  // Update data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = t(key);
+    if (val) el.innerHTML = val;
+  });
+  // Re-render dynamic content if visible
+  const activeTab = document.querySelector('.tab-content.active');
+  if (!activeTab) return;
+  const id = activeTab.id;
+  if (id === 'tab-openings') { renderOCards(); renderDetail(curOp); }
+  if (id === 'tab-black') { renderBlackCards(); renderBlackDetail(curBlack); }
+  if (id === 'tab-practice') renderGame();
+  if (id === 'tab-history') loadHistory();
+  if (id === 'tab-basics') renderBasics();
+}
+
+function renderBasics() {
+  const goalSec = document.querySelector('[data-section="goal"]');
+  if (goalSec) {
+    goalSec.querySelector('h3').innerHTML = t('basics.goal.title');
+    goalSec.querySelector('p').innerHTML = t('basics.goal.text');
+  }
+  const typesSec = document.querySelector('[data-section="types"]');
+  if (typesSec) typesSec.querySelector('h3').innerHTML = t('basics.types.title');
+  // Update concept items
+  const cis = document.querySelectorAll('.ci');
+  const keys = [['ci.center','ci.center.desc'],['ci.develop','ci.develop.desc'],['ci.king','ci.king.desc'],['ci.queen','ci.queen.desc']];
+  cis.forEach((ci, i) => {
+    if (keys[i]) {
+      ci.querySelector('.ctit').textContent = t(keys[i][0]);
+      ci.querySelector('.cdesc').textContent = t(keys[i][1]);
+    }
+  });
+  // Update principle items
+  document.querySelectorAll('[data-principle]').forEach(el => {
+    const k = el.getAttribute('data-principle');
+    el.textContent = t(k);
+  });
+  // Update principles section title & hint
+  const pHint = document.querySelector('[data-i18n="basics.principles.hint"]');
+  if (pHint) pHint.textContent = t('basics.principles.hint');
+  const pTitle = document.querySelector('[data-i18n="basics.principles.title"]');
+  if (pTitle) pTitle.textContent = t('basics.principles.title');
+}
+
+// Apply lang on page load
+function applyInitialLang() {
+  if (LANG === 'en') setLang('en');
+}
+
 // ==== ACCORDION ====
 function toggleAcc(head) {
   const body = head.nextElementSibling;
@@ -543,12 +707,12 @@ function renderDetail(op){
     <div class="dbody">
       <div class="bsect">
         <div><div id="brd">${boardHTML(bStates[bIdx],hl)}</div></div>
-        <div class="mnav"><h4>🎯 Các Nước Đi</h4><div class="mlist" id="mlist">${mh||'<div style="color:#5f7f9f;font-size:.8rem;padding:6px;">Chưa có nước đi</div>'}</div><div class="nbtns"><button class="nbtn" onclick="oBack()">⬅</button><button class="nbtn" onclick="oStart()">⏮</button><button class="nbtn" onclick="oFwd()">➡</button></div></div>
+        <div class="mnav"><h4>${t('label.moves')}</h4><div class="mlist" id="mlist">${mh||'<div style="color:#5f7f9f;font-size:.8rem;padding:6px;">Chưa có nước đi</div>'}</div><div class="nbtns"><button class="nbtn" onclick="oBack()">⬅</button><button class="nbtn" onclick="oStart()">⏮</button><button class="nbtn" onclick="oFwd()">➡</button></div></div>
       </div>
       <div class="sec"><h3>💭 Tại Sao Chơi Opening Này?</h3><p>${op.why}</p></div>
       <div class="sec"><h3>🎯 Ý Tưởng</h3><p>${op.ideas}</p><div class="tip">${op.tip}</div></div>
-      <div class="sec"><h3>⚖️ Điểm Mạnh / Yếu</h3><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">✅ MẠNH</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div><div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">❌ YẾU</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div></div></div>
-      <div class="sec"><h3>🌿 Biến Thể</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
+      <div class="sec"><h3>${t('section.proscons')}</h3><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.strong')}</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div><div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.weak')}</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div></div></div>
+      <div class="sec"><h3>${t('section.vars')}</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
     </div>`;
 }
 
@@ -650,7 +814,7 @@ function doMove(fr,fc,tr,tc){
 }
 
 function undoMove(){if(!gUndo.length)return;const s=gUndo.pop();gBd=s.bd;gTurn=s.turn;gCas=s.cas;gEP=s.ep;gStat=s.stat;gHist=s.hist;gCap=s.cap;gSel=null;gVM=[];renderGame();}
-function copyPGN(){let pgn='';for(let i=0;i<gHist.length;i++){if(i%2===0)pgn+=(i/2+1)+'. ';pgn+=gHist[i]+' ';}pgn=pgn.trim();if(!pgn)return;navigator.clipboard.writeText(pgn).then(()=>{const el=document.getElementById('pgncopy');if(el){el.textContent='✓ Đã copy!';setTimeout(()=>{el.textContent='';},2000);}}).catch(()=>{const ta=document.getElementById('pgntxt');if(ta){ta.style.display='block';ta.value=pgn;ta.select();}});}
+function copyPGN(){let pgn='';for(let i=0;i<gHist.length;i++){if(i%2===0)pgn+=(i/2+1)+'. ';pgn+=gHist[i]+' ';}pgn=pgn.trim();if(!pgn)return;navigator.clipboard.writeText(pgn).then(()=>{const el=document.getElementById('pgncopy');if(el){el.textContent=t('pgn.copied');setTimeout(()=>{el.textContent='';},2000);}}).catch(()=>{const ta=document.getElementById('pgntxt');if(ta){ta.style.display='block';ta.value=pgn;ta.select();}});}
 
 function renderGB(){
   const el=document.getElementById('gboard');if(!el)return;
@@ -675,10 +839,10 @@ function renderGame(){
   if(hEl){if(!gHist.length){hEl.innerHTML='<div style="color:#5f7f9f;font-size:.82rem;padding:6px;">Chưa có nước đi...</div>';}
   else{let h='';for(let i=0;i<gHist.length;i+=2){const n=i/2+1,w=gHist[i]||'',b=gHist[i+1]||'',cur=i>=gHist.length-2;h+=`<div class="mi${cur?' cur':''}"><span class="mn">${n}.</span><span class="mw">${w}</span><span class="mb">${b}</span></div>`;}hEl.innerHTML=h;hEl.scrollTop=hEl.scrollHeight;}}
   const sEl=document.getElementById('gstatus');
-  if(sEl){const tn=gTurn==='w'?'⬜ Trắng':'⬛ Đen';if(gStat==='checkmate')sEl.innerHTML=`<span style="color:#f44336;font-weight:700;">♔ Chiếu hết! ${gTurn==='w'?'⬛ Đen':'⬜ Trắng'} thắng!</span>`;else if(gStat==='stalemate')sEl.innerHTML=`<span style="color:#ff9800;font-weight:700;">🤝 Pat! Hòa cờ!</span>`;else if(gStat==='check')sEl.innerHTML=`<span style="color:#f44336;">⚠️ ${tn} đang bị chiếu!</span>`;else sEl.innerHTML=`Lượt đi: <strong>${tn}</strong>`;}
+  if(sEl){const tn=gTurn==='w'?t('game.turn.white'):t('game.turn.black');if(gStat==='checkmate')sEl.innerHTML=`<span style="color:#f44336;font-weight:700;">${t('game.status.checkmate',{side:gTurn==='w'?t('game.turn.black'):t('game.turn.white')})}</span>`;else if(gStat==='stalemate')sEl.innerHTML=`<span style="color:#ff9800;font-weight:700;">${t('game.status.stalemate')}</span>`;else if(gStat==='check')sEl.innerHTML=`<span style="color:#f44560;">${t('game.status.check',{side:tn})}</span>`;else sEl.innerHTML=t('game.status.turn',{side:tn});}
   const cw=document.getElementById('capw'),cb=document.getElementById('capb');
-  if(cw)cw.innerHTML='<span style="font-size:.7rem;color:#5f7f9f;">Trắng ăn: </span>'+gCap.w.map(p=>`<span class="pb">${PU[p]||p}</span>`).join('');
-  if(cb)cb.innerHTML='<span style="font-size:.7rem;color:#5f7f9f;">Đen ăn: </span>'+gCap.b.map(p=>`<span class="pw">${PU[p]||p}</span>`).join('');
+  if(cw)cw.innerHTML=t('game.captured.white')+gCap.w.map(p=>`<span class="pb">${PU[p]||p}</span>`).join('');
+  if(cb)cb.innerHTML=t('game.captured.black')+gCap.b.map(p=>`<span class="pw">${PU[p]||p}</span>`).join('');
 }
 
 // ==== API ====
@@ -707,12 +871,12 @@ async function saveGame() {
 async function loadHistory() {
   const el = document.getElementById('history-list');
   if (!el) return;
-  el.innerHTML = '<div style="color:#5f7f9f;text-align:center;padding:40px;">Đang tải...</div>';
+  el.innerHTML = `<div style="color:#5f7f9f;text-align:center;padding:40px;">${t('history.loading')}</div>`;
   try {
     const res = await fetch(`${API}/games?limit=50`);
     const data = await res.json();
     if (!data.success || !data.data.length) {
-      el.innerHTML = '<div style="color:#5f7f9f;text-align:center;padding:40px;">Chưa có ván cờ nào được lưu.</div>';
+      el.innerHTML = `<div style="color:#5f7f9f;text-align:center;padding:40px;">${t('history.empty')}</div>`;
       return;
     }
     const resultIcon = { '1-0': '⬜ Trắng thắng', '0-1': '⬛ Đen thắng', '1/2-1/2': '🤝 Hòa', '*': '⏸️ Dang dở' };
@@ -738,7 +902,7 @@ async function loadHistory() {
       </div>`;
     }).join('');
   } catch (e) {
-    el.innerHTML = '<div style="color:#f44336;text-align:center;padding:40px;">❌ Không thể kết nối server tại localhost:3001</div>';
+    el.innerHTML = `<div style="color:#f44336;text-align:center;padding:40px;">${t('history.noserver')}</div>`;
   }
 }
 
@@ -774,6 +938,21 @@ const blackOpenings = [
     cons:['Rất phức tạp, cần học nhiều','Sai lầm nhỏ dễ thua nhanh'],
     vars:[{n:'Najdorf (5...a6)',m:'5...a6',d:'Phổ biến nhất. Ngăn Nb5, chuẩn bị ...b5.'},{n:'Dragon (5...g6)',m:'5...g6 6.Be3 Bg7',d:'Fianchetto Tượng g7, cực kỳ sắc bén.'},{n:'Scheveningen (5...e6)',m:'5...e6',d:'Kiên cố hơn, cấu trúc vững chắc.'}],
     tip:'💡 Sicilian dạy bạn rằng không cần chơi đối xứng — hãy tạo ra kế hoạch riêng của mình.',
+    tip_en:`💡 London teaches that having a clear plan and executing it patiently can be stronger than deep theoretical knowledge.`,
+    ideas_en:`<strong>White's plan:</strong> Build the "pyramid" — d4+e3+c3+Bd3+0-0. Then attack slowly or wait for Black's mistakes.<br><br><strong>Why London works at all levels:</strong> Beginners use it because it's simple. Magnus Carlsen uses it as a psychological weapon — forcing opponents to create their own plan.`,
+    why_en:`"Set it and forget it" — White plays d4, Nf3, Bf4 regardless of what Black does. No need to memorize deep theory. Bishop f4 on a strong square, hard to attack.<br><br><strong>3.Bf4</strong> — The London move. Controls e5, hard to chase away.`,
+    tip_en:`💡 In French, always look for ways to free the Bad Bishop — that's the key to transitioning from defense to attack.`,
+    ideas_en:`<strong>Black's plan:</strong> Push ...c5 to attack d4. If White plays dxc5, Black recaptures and frees the "Bad Bishop" on c8.<br><br><strong>The "Bad Bishop" problem:</strong> Tượng c8 is blocked by e6 pawn — Black must find a way to free it with ...b6+...Ba6.`,
+    why_en:`Black builds a fortress with e6+d5, accepting cramped space in exchange for a solid structure.<br><br><strong>1...e6</strong> — Prepares ...d5 without blocking the c8 Bishop... wait, it does. That's French's trade-off.<br><strong>2...d5</strong> — Challenges e4 directly. The e6+d5 wedge creates pressure on White's center.`,
+    tip_en:`💡 Italian Game is the perfect "school" — every move has a clear reason. Understanding Italian means understanding 80% of opening principles.`,
+    ideas_en:`<strong>Short-term:</strong> Complete development with 0-0, d3/d4, Re1. All pieces point toward Black's King.<br><br><strong>Long-term:</strong> Attack f7 with Bc4+Ng5+Qf3 threatening Nxf7 or Bxf7+. If Black defends badly, the game can end in 10-15 moves.`,
+    why_en:`Bishop c4 aims directly at f7 — the weakest square in Black's position (only defended by the King). The most classical opening, every move follows principle.<br><br><strong>3.Bc4</strong> — Eyes f7, controls d5, prepares for a quick kingside attack.`,
+    tip_en:`💡 Sicilian statistically gives Black the highest win rate vs 1.e4. But it requires serious study to play well.`,
+    ideas_en:`<strong>Black's plan:</strong> Rooks to c8, push ...b5-b4 to pressure Nc3, attack the queenside. Open the c-file after ...cxd4.<br><br><strong>White's plan:</strong> f4-f5 or g4-g5 attacking the Black King. Whoever breaks through first wins — this is why Sicilian creates the sharpest games.`,
+    why_en:`Instead of mirroring 1...e5, Black uses c5 to fight for d4 from the flank. This creates a <strong>completely asymmetric position</strong> — White attacks the kingside, Black counterattacks the queenside.<br><br><strong>1...c5</strong> — Controls d4 without occupying the center directly. The asymmetry is intentional.`,
+    tip_en:`💡 "Torture your opponent slowly" — Ruy López creates long-term positional pressure that never fully goes away.`,
+    ideas_en:`<strong>White's plan:</strong> After Black handles the Bb5 threat, White continues 0-0, Re1, d3/d4 — building long-term pressure. The threat on e5 and Nc6 never goes away.<br><br><strong>Black's plan:</strong> Many options — Berlin (3...Nf6, very solid), Morphy (3...a6, chase the Bishop). Black aims for ...d5 counterplay.<br><br><strong>Core theme:</strong> "Slow squeeze" — White improves slightly every move without needing tactics.`,
+    why_en:`Bishop b5 attacks the Knight on c6 — the defender of pawn e5. If the Knight moves, e5 falls. This is the most-played opening at the top level, balancing development and pressure.<br><br><strong>1.e4</strong> — Controls center, opens diagonals for Queen and Bishop.<br><strong>1...e5</strong> — Black mirrors the center.<br><strong>2.Nf3</strong> — Attacks e5, develops naturally.<br><strong>2...Nc6</strong> — Defends e5 by development.<br><strong>3.Bb5</strong> — The Ruy López move! Attacks the Knight that defends e5 — indirect pressure on the pawn.`,
   },
   {
     id:'caro-b', name:'Caro-Kann Defense', eco:'B10-B19', cat:'vs 1.e4', dif:'intermediate',
@@ -865,15 +1044,15 @@ function renderBlackDetail(op) {
       <h2>${op.name}</h2>
       <span class="eco-b">ECO ${op.eco}</span>
       <span style="background:${catColor[op.cat]||'#0f3460'};color:#fff;font-size:.75rem;padding:3px 10px;border-radius:20px;margin-left:8px;font-weight:700;">${op.cat}</span>
-      <span class="diff ${dc[op.dif]}" style="margin-left:8px;">${dlV[op.dif]}</span>
+      <span class="diff ${dc[op.dif]}" style="margin-left:8px;">${dlV()[op.dif]}</span>
     </div>
     <div class="dbody">
       <div class="bsect">
         <div><div id="bbrd">${boardHTML(bBlackStates[bBlackIdx],hl)}</div></div>
         <div class="mnav"><h4>🎯 Các Nước Đi</h4><div class="mlist" id="bmlist">${mh}</div><div class="nbtns"><button class="nbtn" onclick="bBack()">⬅</button><button class="nbtn" onclick="bStart()">⏮</button><button class="nbtn" onclick="bFwd()">➡</button></div></div>
       </div>
-      <div class="sec"><h3>💭 Tại Sao Đen Chơi Thế Này?</h3><p>${op.whyHTML||op.why||''}</p></div>
-      <div class="sec"><h3>🎯 Kế Hoạch Phản Công</h3><p>${op.ideasHTML||op.ideas||''}</p></div>
+      <div class="sec"><h3>${t('section.why.black')}</h3><p>${op.whyHTML||op.why||''}</p></div>
+      <div class="sec"><h3>${t('section.ideas.black')}</h3><p>${op.ideasHTML||op.ideas||''}</p></div>
       <div class="sec">
         <h3>⚖️ Điểm Mạnh / Yếu</h3>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
@@ -900,14 +1079,14 @@ function bStart(){bBlackIdx=0;updBlackBoard();}
 
 function renderBlackCards() {
   const dc={beginner:'db',intermediate:'di',advanced:'da'};
-  const dlV={beginner:'Cơ bản',intermediate:'Trung cấp',advanced:'Nâng cao'};
+  const dlV=()=>({beginner:t('diff.beginner'),intermediate:t('diff.intermediate'),advanced:t('diff.advanced')});
   const catColor={'vs 1.e4':'#e94560','vs 1.d4':'#2196f3'};
   document.getElementById('bcards').innerHTML = blackOpenings.map(op => `
     <div class="ocard${curBlack.id===op.id?' active':''}" onclick="selBlack('${op.id}')">
       <div class="nm">${op.name}</div>
       <div class="ec"><span style="color:${catColor[op.cat]||'#90b8d8'};font-weight:700;">${op.cat}</span> · ECO ${op.eco}</div>
       <div class="mp">${op.moves.map((m,i)=>`${i+1}.${m.w}${m.b?' '+m.b:''}`).join(' ')}</div>
-      <span class="diff ${dc[op.dif]}">${dlV[op.dif]}</span>
+      <span class="diff ${dc[op.dif]}">${dlV()[op.dif]}</span>
     </div>`).join('');
 }
 function selBlack(id) {

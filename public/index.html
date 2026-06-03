@@ -109,6 +109,7 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
   <button class="tab-btn" onclick="switchTab(event,'openings')">♟️ Các Opening</button>
   <button class="tab-btn" onclick="switchTab(event,'practice')">⚔️ Luyện Tập</button>
   <button class="tab-btn" onclick="switchTab(event,'history')">📜 Lịch Sử</button>
+  <button class="tab-btn" onclick="switchTab(event,'black')">⚫ Góc Đen</button>
 </div>
 
 <!-- BASICS -->
@@ -265,6 +266,211 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
       </div>
     </div>
     <div id="history-list"><div style="color:#5f7f9f;text-align:center;padding:40px;">Đang tải...</div></div>
+  </div>
+</div>
+
+<!-- BLACK COUNTER TAB -->
+<div id="tab-black" class="tab-content">
+  <div style="max-width:1100px;margin:0 auto;padding:28px 20px;">
+    <div class="sec"><h3>⚫ Counter Attacks — Nhìn Từ Góc Đen</h3>
+      <p style="color:#c0d0e0;font-size:.92rem;line-height:1.7;">Trắng luôn đi trước nên có lợi thế nhỏ. Nhiệm vụ của Đen là <strong style="color:#f5c842">trung hòa lợi thế đó</strong> và tạo counterplay riêng. Dưới đây là cách Đen phản ứng với từng nước đi đầu của Trắng.</p>
+    </div>
+
+    <!-- vs 1.e4 -->
+    <div class="sec">
+      <h3 style="font-size:1.1rem;">🔴 Trắng đi <span style="font-family:monospace;background:#0f3460;padding:2px 10px;border-radius:6px;">1.e4</span> — Đen nên đi gì?</h3>
+      <p style="color:#7090a0;font-size:.83rem;margin-bottom:14px;">👆 Bấm vào từng lựa chọn để xem chi tiết</p>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#b58863;">c5</span>
+          <span class="acc-title">1...c5 — Sicilian Defense <span style="color:#f44336;font-size:.78rem;margin-left:8px;">★★★ Tấn công nhất</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Thay vì đối xứng 1...e5, Đen dùng tốt c5 kiểm soát ô d4 từ cánh Hậu. Tạo game <strong>bất đối xứng hoàn toàn</strong> — Trắng tấn công cánh Vua, Đen phản công cánh Hậu. Ai nhanh hơn thắng. Thống kê: Đen thắng nhiều nhất với nước này vs 1.e4.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Các nước tiếp theo</div><div class="acc-why-text">
+            <strong>Nếu Trắng chơi 2.Nf3 → 3.d4:</strong> Đen đi ...cxd4 mở cột c, sau đó ...Nf6, ...d6, nhập thành cánh Vua, Xe về c8 phản công.<br><br>
+            <strong>Variation phổ biến nhất — Najdorf (5...a6):</strong> Ngăn Nb5+Bb5, chuẩn bị ...e5 hoặc ...b5. Kasparov, Fischer đều dùng variation này.<br><br>
+            <strong>Dragon (5...g6):</strong> Fianchetto Tượng g7 lên đường chéo dài h8-a1. Cực kỳ sắc bén — nếu mày thích chơi hung hãn.
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn Sicilian</div><div class="acc-tags"><span class="acc-tag">Phản công mạnh nhất cho Đen</span><span class="acc-tag">Tỷ lệ thắng cao nhất</span><span class="acc-tag">Không chơi thụ động</span><span class="acc-tag">Phù hợp người thích tấn công</span></div></div>
+          <div class="acc-ben" style="margin-top:10px;"><div class="acc-ben-label" style="color:#f44336;">⚠️ Rủi ro</div><div class="acc-tags"><span class="acc-tag" style="border-color:#f44336;color:#f44336;background:#2a0a0a;">Rất phức tạp, cần học nhiều</span><span class="acc-tag" style="border-color:#f44336;color:#f44336;background:#2a0a0a;">Sai lầm nhỏ dễ thua nhanh</span></div></div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#b58863;">e6</span>
+          <span class="acc-title">1...e6 — French Defense <span style="color:#ff9800;font-size:.78rem;margin-left:8px;">★★☆ Kiên cố</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Đen chuẩn bị ...d5 ở nước 2 để thách thức tốt e4. Tốt e6 tạo nền tảng vững cho tốt d5. Sau đó Đen nhắm phá vỡ trung tâm Trắng bằng <strong>...c5</strong> — tấn công tốt d4. Nếu Trắng đổi dxc5, Đen lấy lại và giải phóng Tượng c8.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Kế hoạch của Đen</div><div class="acc-why-text">
+            <strong>Nước đi chuẩn:</strong> 1...e6 2.d4 d5 → thách thức ngay trung tâm Trắng.<br><br>
+            <strong>Kế hoạch chính:</strong> Phát triển Mã (Nf6 hoặc Nc6), nhập thành, sau đó đẩy ...c5 phá trung tâm d4.<br><br>
+            <strong>Điểm yếu cần biết:</strong> Tượng c8 bị tốt e6 chặn — gọi là "Bad Bishop". Cần tìm cách giải phóng nó bằng ...b6 ...Ba6 hoặc đổi đi.
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn French</div><div class="acc-tags"><span class="acc-tag">Cấu trúc tốt rất vững</span><span class="acc-tag">Kế hoạch phản công rõ ràng</span><span class="acc-tag">Ít lý thuyết hơn Sicilian</span></div></div>
+          <div class="acc-ben" style="margin-top:10px;"><div class="acc-ben-label" style="color:#f44336;">⚠️ Rủi ro</div><div class="acc-tags"><span class="acc-tag" style="border-color:#f44336;color:#f44336;background:#2a0a0a;">Bad Bishop c8 suốt ván</span><span class="acc-tag" style="border-color:#f44336;color:#f44336;background:#2a0a0a;">Bị chặt hẹp không gian</span></div></div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#b58863;">c6</span>
+          <span class="acc-title">1...c6 — Caro-Kann Defense <span style="color:#4caf50;font-size:.78rem;margin-left:8px;">★★★ Solid nhất</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Giống French nhưng <strong>không có Bad Bishop</strong>. Tốt c6 chuẩn bị ...d5, và sau khi đổi ...dxe4, Tượng c8 tự do ra f5 hoạt động ngay. Đây là lý do Caro-Kann được coi là phòng thủ "sạch nhất" về mặt cấu trúc — không có điểm yếu cố hữu.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Kế hoạch của Đen</div><div class="acc-why-text">
+            <strong>Nước đi chuẩn:</strong> 1...c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bf5 → Tượng ra ngay!<br><br>
+            <strong>Kế hoạch chính:</strong> Sau khi phát triển xong (Nf6, e6, Bd6/Be7), nhập thành ngắn. Sau đó phản công trung tâm bằng ...c5 hoặc ...e5.<br><br>
+            <strong>Ưu điểm so với French:</strong> Tượng f5 hoạt động tự do ngay từ khai cuộc — không bao giờ bị "nhốt".
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn Caro-Kann</div><div class="acc-tags"><span class="acc-tag">Cấu trúc tốt hoàn hảo</span><span class="acc-tag">Không có điểm yếu cố hữu</span><span class="acc-tag">Dễ học hơn Sicilian</span><span class="acc-tag">Phù hợp người thích solid</span></div></div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#b58863;">e5</span>
+          <span class="acc-title">1...e5 — Open Game <span style="color:#2196f3;font-size:.78rem;margin-left:8px;">★★☆ Trực tiếp nhất</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Đen chiếm trung tâm đối xứng ngay lập tức. Game mở ra trực tiếp — cả hai đều có cơ hội phát triển bình đẳng. Đây là nước phản ứng tự nhiên nhất, dẫn đến Italian Game, Ruy López, hoặc Scotch.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Kế hoạch của Đen</div><div class="acc-why-text">
+            <strong>vs Italian (3.Bc4):</strong> Đen chơi 3...Bc5 đối xứng, hoặc 3...Nf6 phản công ngay.<br><br>
+            <strong>vs Ruy López (3.Bb5):</strong> Đen có nhiều lựa chọn: 3...a6 (đuổi Tượng), 3...Nf6 (Berlin — cực solid), hoặc 3...Bc5.<br><br>
+            <strong>Nguyên tắc chung:</strong> Phát triển nhanh, bảo vệ tốt e5, nhập thành sớm. Không để Trắng chiếm d4 quá dễ.
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn 1...e5</div><div class="acc-tags"><span class="acc-tag">Tự nhiên và logic nhất</span><span class="acc-tag">Phù hợp người mới</span><span class="acc-tag">Chiếm trung tâm trực tiếp</span></div></div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#b58863;">d6</span>
+          <span class="acc-title">1...d6 / 1...g6 — Pirc / Modern Defense <span style="color:#9c27b0;font-size:.78rem;margin-left:8px;">★☆☆ Hypermodern</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Đen cố ý nhường trung tâm cho Trắng, sau đó dùng Tượng fianchetto (g7) tấn công trung tâm từ xa. Đây là triết lý Hypermodern: kiểm soát trung tâm bằng quân thay vì bằng tốt. Khi trung tâm Trắng bị công kích đủ mạnh, nó sẽ sụp đổ.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Kế hoạch của Đen</div><div class="acc-why-text">
+            <strong>Setup chuẩn:</strong> ...g6 → ...Bg7 → ...d6 → nhập thành cánh Vua → ...e5 hoặc ...c5 phá trung tâm.<br><br>
+            <strong>Tượng g7</strong> trên đường chéo dài h8-a1 sẽ "thức tỉnh" khi trung tâm mở, tạo lực tấn công khủng khiếp.<br><br>
+            <strong>Cảnh báo:</strong> Nếu Đen không phản công đúng lúc, Trắng sẽ đè bẹp bằng không gian vượt trội.
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn Pirc/Modern</div><div class="acc-tags"><span class="acc-tag">Đối thủ không quen lý thuyết</span><span class="acc-tag">Phản công bất ngờ</span><span class="acc-tag">Phù hợp người thích hypermodern</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- vs 1.d4 -->
+    <div class="sec">
+      <h3 style="font-size:1.1rem;">🔵 Trắng đi <span style="font-family:monospace;background:#0f3460;padding:2px 10px;border-radius:6px;">1.d4</span> — Đen nên đi gì?</h3>
+      <p style="color:#7090a0;font-size:.83rem;margin-bottom:14px;">👆 Bấm vào từng lựa chọn để xem chi tiết</p>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#2196f3;">KID</span>
+          <span class="acc-title">1...Nf6 2...g6 — King's Indian Defense <span style="color:#f44336;font-size:.78rem;margin-left:8px;">★★★ Phản công mạnh nhất</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Đen nhường trung tâm e4+d4 cho Trắng xây dựng, rồi <strong>phá vỡ bằng ...e5</strong>. Khi Trắng đẩy d5 đóng trung tâm, Đen tấn công cánh Vua bằng ...f5-f4. Tượng g7 trên đường chéo dài là vũ khí chính — khi trung tâm mở, nó bắn thẳng từ h8 đến a1.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Kế hoạch của Đen</div><div class="acc-why-text">
+            <strong>Setup:</strong> 1...Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Nf3 0-0 → sau đó ...<strong>e5!</strong><br><br>
+            <strong>Sau ...e5:</strong> Nếu Trắng dxe5 → Đen dxe5, Tượng g7 thức tỉnh. Nếu Trắng d5 → Đen chơi ...f5-f4 tấn công cánh Vua.<br><br>
+            <strong>Kasparov dùng KID</strong> để vô địch thế giới nhiều lần — chứng minh sức mạnh của nó ở cấp cao nhất.
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn KID</div><div class="acc-tags"><span class="acc-tag">Phản công cực kỳ mạnh</span><span class="acc-tag">Kasparov dùng để vô địch</span><span class="acc-tag">Đối thủ phải biết nhiều lý thuyết</span></div></div>
+          <div class="acc-ben" style="margin-top:10px;"><div class="acc-ben-label" style="color:#f44336;">⚠️ Rủi ro</div><div class="acc-tags"><span class="acc-tag" style="border-color:#f44336;color:#f44336;background:#2a0a0a;">Nếu không phản công kịp sẽ thua</span><span class="acc-tag" style="border-color:#f44336;color:#f44336;background:#2a0a0a;">Cần học nhiều variation</span></div></div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#2196f3;">NI</span>
+          <span class="acc-title">1...Nf6 2...e6 3...Bb4 — Nimzo-Indian Defense <span style="color:#ff9800;font-size:.78rem;margin-left:8px;">★★★ Chiến lược sâu</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Đen ghim Mã c3 bằng Tượng b4 ngay lập tức. Nếu Trắng đẩy e4, Đen ăn Bxc3 phá cấu trúc tốt Trắng (tốt đôi ở c3-c4). Đen đổi <strong>Tượng lấy Mã</strong> — chấp nhận mất Tượng đôi nhưng Trắng có tốt đôi yếu và không gian bị phá vỡ.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Kế hoạch của Đen</div><div class="acc-why-text">
+            <strong>Setup:</strong> 1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 → ghim Mã c3 ngay.<br><br>
+            <strong>Sau 4.e3 hoặc 4.Qc2:</strong> Đen chơi 0-0, d5 hoặc c5, phát triển ổn định.<br><br>
+            <strong>Ý tưởng cốt lõi:</strong> Trắng có Tượng đôi nhưng tốt đôi ở c3-c4. Đen khai thác điểm yếu cấu trúc đó ở endgame.
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn Nimzo</div><div class="acc-tags"><span class="acc-tag">Phá cấu trúc tốt Trắng ngay</span><span class="acc-tag">Ít lý thuyết hơn KID</span><span class="acc-tag">Kasparov, Karpov đều dùng</span></div></div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#2196f3;">Slav</span>
+          <span class="acc-title">1...d5 2...c6 — Slav Defense <span style="color:#4caf50;font-size:.78rem;margin-left:8px;">★★☆ Solid nhất vs 1.d4</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Đen thách thức Queen's Gambit bằng cách hỗ trợ tốt d5 bằng c6 — không chặn Tượng c8 như trong QGD. Sau đó Đen có thể ăn tốt c4 và giữ nó bằng ...b5. Đây là cách phòng thủ <strong>cân bằng nhất</strong> vs 1.d4 về mặt cấu trúc.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Kế hoạch của Đen</div><div class="acc-why-text">
+            <strong>Setup:</strong> 1.d4 d5 2.c4 c6 3.Nf3 Nf6 → phát triển tự nhiên.<br><br>
+            <strong>Nếu ăn tốt (Semi-Slav):</strong> ...dxc4 rồi ...b5-b4 giữ tốt extra. Trắng phải chiến đấu để lấy lại.<br><br>
+            <strong>Tượng c8 tự do:</strong> Khác QGD, Slav giữ đường chéo c8-h3 mở cho Tượng phát triển ra f5 hoặc g4.
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn Slav</div><div class="acc-tags"><span class="acc-tag">Cấu trúc tốt hoàn hảo</span><span class="acc-tag">Tượng c8 tự do</span><span class="acc-tag">Rất phổ biến ở cấp cao</span><span class="acc-tag">Ít lý thuyết hơn KID</span></div></div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num" style="background:#2196f3;">Grü</span>
+          <span class="acc-title">1...Nf6 2...g6 3...d5 — Grünfeld Defense <span style="color:#f44336;font-size:.78rem;margin-left:8px;">★★★ Phá trung tâm triệt để</span></span>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-why"><div class="acc-why-label">🎯 Ý tưởng phản công</div><div class="acc-why-text">Hypermodern cực đoan — Đen đẩy ...d5 ngay khi Trắng đã xây trung tâm e4+d4, sau đó ăn exd5 để <strong>tập trung mọi lực lượng tấn công tốt d4</strong>. Tượng g7 bắn thẳng vào d4, Hậu lên d8-b6 tấn công d4, Mã về c6 tấn công d4. Tốt d4 trở thành gánh nặng của Trắng.</div></div>
+          <div class="acc-why" style="margin-top:12px;"><div class="acc-why-label">♟️ Kế hoạch của Đen</div><div class="acc-why-text">
+            <strong>Setup:</strong> 1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.cxd5 Nxd5 → Đen lấy lại, Tượng g7 nhắm d4.<br><br>
+            <strong>Sau 5.e4:</strong> Đen chơi Nxc3 bxc3 c5! — tấn công trung tâm ngay lập tức.<br><br>
+            <strong>Magnus Carlsen, Kramnik</strong> đều dùng Grünfeld để vô địch thế giới.
+          </div></div>
+          <div class="acc-ben"><div class="acc-ben-label">✅ Tại sao chọn Grünfeld</div><div class="acc-tags"><span class="acc-tag">Phá trung tâm triệt để nhất</span><span class="acc-tag">Magnus Carlsen ưa dùng</span><span class="acc-tag">Counterplay cực mạnh</span></div></div>
+          <div class="acc-ben" style="margin-top:10px;"><div class="acc-ben-label" style="color:#f44336;">⚠️ Rủi ro</div><div class="acc-tags"><span class="acc-tag" style="border-color:#f44336;color:#f44336;background:#2a0a0a;">Cực kỳ phức tạp về lý thuyết</span><span class="acc-tag" style="border-color:#f44336;color:#f44336;background:#2a0a0a;">Không hợp với người mới</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary table -->
+    <div class="sec">
+      <h3>📊 Bảng So Sánh Nhanh</h3>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:.88rem;">
+          <thead>
+            <tr style="background:#0f3460;">
+              <th style="padding:10px 14px;text-align:left;color:#f5c842;border-bottom:2px solid #e94560;">Trắng đi</th>
+              <th style="padding:10px 14px;text-align:left;color:#f5c842;border-bottom:2px solid #e94560;">Đen đi</th>
+              <th style="padding:10px 14px;text-align:left;color:#f5c842;border-bottom:2px solid #e94560;">Phong cách</th>
+              <th style="padding:10px 14px;text-align:left;color:#f5c842;border-bottom:2px solid #e94560;">Độ khó</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #0f3460;"><td style="padding:10px 14px;color:#c0d0e0;">1.e4</td><td style="padding:10px 14px;color:#f5c842;">1...c5 Sicilian</td><td style="padding:10px 14px;color:#90b8d8;">Tấn công, bất đối xứng</td><td style="padding:10px 14px;"><span style="color:#f44336;">⬛⬛⬛</span></td></tr>
+            <tr style="border-bottom:1px solid #0f3460;background:#16213e;"><td style="padding:10px 14px;color:#c0d0e0;">1.e4</td><td style="padding:10px 14px;color:#f5c842;">1...e5 Open</td><td style="padding:10px 14px;color:#90b8d8;">Trực tiếp, cân bằng</td><td style="padding:10px 14px;"><span style="color:#ff9800;">⬛⬛⬜</span></td></tr>
+            <tr style="border-bottom:1px solid #0f3460;"><td style="padding:10px 14px;color:#c0d0e0;">1.e4</td><td style="padding:10px 14px;color:#f5c842;">1...e6 French</td><td style="padding:10px 14px;color:#90b8d8;">Kiên cố, phản công</td><td style="padding:10px 14px;"><span style="color:#ff9800;">⬛⬛⬜</span></td></tr>
+            <tr style="border-bottom:1px solid #0f3460;background:#16213e;"><td style="padding:10px 14px;color:#c0d0e0;">1.e4</td><td style="padding:10px 14px;color:#f5c842;">1...c6 Caro-Kann</td><td style="padding:10px 14px;color:#90b8d8;">Solid, ít điểm yếu</td><td style="padding:10px 14px;"><span style="color:#ff9800;">⬛⬛⬜</span></td></tr>
+            <tr style="border-bottom:1px solid #0f3460;"><td style="padding:10px 14px;color:#c0d0e0;">1.d4</td><td style="padding:10px 14px;color:#f5c842;">KID (Nf6+g6)</td><td style="padding:10px 14px;color:#90b8d8;">Phản công mạnh</td><td style="padding:10px 14px;"><span style="color:#f44336;">⬛⬛⬛</span></td></tr>
+            <tr style="border-bottom:1px solid #0f3460;background:#16213e;"><td style="padding:10px 14px;color:#c0d0e0;">1.d4</td><td style="padding:10px 14px;color:#f5c842;">Nimzo (Nf6+e6+Bb4)</td><td style="padding:10px 14px;color:#90b8d8;">Chiến lược, phá cấu trúc</td><td style="padding:10px 14px;"><span style="color:#ff9800;">⬛⬛⬜</span></td></tr>
+            <tr style="border-bottom:1px solid #0f3460;"><td style="padding:10px 14px;color:#c0d0e0;">1.d4</td><td style="padding:10px 14px;color:#f5c842;">Slav (d5+c6)</td><td style="padding:10px 14px;color:#90b8d8;">Solid, cân bằng</td><td style="padding:10px 14px;"><span style="color:#4caf50;">⬛⬜⬜</span></td></tr>
+            <tr style="background:#16213e;"><td style="padding:10px 14px;color:#c0d0e0;">1.d4</td><td style="padding:10px 14px;color:#f5c842;">Grünfeld (Nf6+g6+d5)</td><td style="padding:10px 14px;color:#90b8d8;">Phá trung tâm triệt để</td><td style="padding:10px 14px;"><span style="color:#f44336;">⬛⬛⬛</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 

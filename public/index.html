@@ -697,7 +697,7 @@ function getHL(san){
 function renderDetail(op){
   bStates=getBStates(op);bIdx=bStates.length-1;
   const allM=[];op.moves.forEach(m=>{if(m.w)allM.push(m.w);if(m.b)allM.push(m.b);});
-  const dl={beginner:'Cơ bản',intermediate:'Trung cấp',advanced:'Nâng cao'};
+  const dl={beginner:t('diff.beginner'),intermediate:t('diff.intermediate'),advanced:t('diff.advanced')};
   const dc={beginner:'db',intermediate:'di',advanced:'da'};
   const hl=bIdx>0?getHL(allM[bIdx-1]):[];
   let mh='';let mi=0;
@@ -709,8 +709,8 @@ function renderDetail(op){
         <div><div id="brd">${boardHTML(bStates[bIdx],hl)}</div></div>
         <div class="mnav"><h4>${t('label.moves')}</h4><div class="mlist" id="mlist">${mh||'<div style="color:#5f7f9f;font-size:.8rem;padding:6px;">Chưa có nước đi</div>'}</div><div class="nbtns"><button class="nbtn" onclick="oBack()">⬅</button><button class="nbtn" onclick="oStart()">⏮</button><button class="nbtn" onclick="oFwd()">➡</button></div></div>
       </div>
-      <div class="sec"><h3>💭 Tại Sao Chơi Opening Này?</h3><p>${op.why}</p></div>
-      <div class="sec"><h3>🎯 Ý Tưởng</h3><p>${op.ideas}</p><div class="tip">${op.tip}</div></div>
+      <div class="sec"><h3>${LANG==='en'?'💭 Why Play This Opening?':'💭 Tại Sao Chơi Opening Này?'}</h3><p>${LANG==='en'&&op.why_en?op.why_en:op.why}</p></div>
+      <div class="sec"><h3>${LANG==='en'?'🎯 Strategic Ideas':'🎯 Ý Tưởng Chiến Lược'}</h3><p>${LANG==='en'&&op.ideas_en?op.ideas_en:op.ideas}</p><div class="tip">${LANG==='en'&&op.tip_en?op.tip_en:op.tip}</div></div>
       <div class="sec"><h3>${t('section.proscons')}</h3><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.strong')}</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div><div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.weak')}</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div></div></div>
       <div class="sec"><h3>${t('section.vars')}</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
     </div>`;
@@ -729,7 +729,7 @@ function oFwd(){if(bIdx<bStates.length-1){bIdx++;updBoard();}}
 function oStart(){bIdx=0;updBoard();}
 
 function renderOCards(){
-  const dl={beginner:'Cơ bản',intermediate:'Trung cấp',advanced:'Nâng cao'};
+  const dl={beginner:t('diff.beginner'),intermediate:t('diff.intermediate'),advanced:t('diff.advanced')};
   const dc={beginner:'db',intermediate:'di',advanced:'da'};
   const cc={Open:'#4caf50','Semi-Open':'#ff9800',Closed:'#2196f3',Indian:'#9c27b0'};
   document.getElementById('ocards').innerHTML=openings.map(op=>`<div class="ocard${curOp.id===op.id?' active':''}" onclick="selOp('${op.id}')"><div class="nm">${op.name}</div><div class="ec">ECO ${op.eco} · <span style="color:${cc[op.cat]||'#90b8d8'}">${op.cat}</span></div><div class="mp">${op.moves.map((m,i)=>`${i+1}.${m.w}${m.b?' '+m.b:''}`).join(' ')}</div><span class="diff ${dc[op.dif]}">${dl[op.dif]}</span></div>`).join('');
@@ -1027,7 +1027,7 @@ function renderBlackDetail(op) {
   const allM = [];
   op.moves.forEach(m => { if(m.w) allM.push(m.w); if(m.b) allM.push(m.b); });
   const dl = {beginner:'Co ban', intermediate:'Trung cap', advanced:'Nang cao'};
-  const dlV = {beginner:'Cơ bản', intermediate:'Trung cấp', advanced:'Nâng cao'};
+  const dlV = {beginner:t('diff.beginner'), intermediate:t('diff.intermediate'), advanced:t('diff.advanced')};
   const dc = {beginner:'db', intermediate:'di', advanced:'da'};
   const catColor = {'vs 1.e4':'#e94560','vs 1.d4':'#2196f3'};
   const hl = bBlackIdx > 0 ? getHL(allM[bBlackIdx-1]) : [];
@@ -1049,18 +1049,18 @@ function renderBlackDetail(op) {
     <div class="dbody">
       <div class="bsect">
         <div><div id="bbrd">${boardHTML(bBlackStates[bBlackIdx],hl)}</div></div>
-        <div class="mnav"><h4>🎯 Các Nước Đi</h4><div class="mlist" id="bmlist">${mh}</div><div class="nbtns"><button class="nbtn" onclick="bBack()">⬅</button><button class="nbtn" onclick="bStart()">⏮</button><button class="nbtn" onclick="bFwd()">➡</button></div></div>
+        <div class="mnav"><h4>${LANG==='en'?'🎯 Moves':'🎯 Các Nước Đi'}</h4><div class="mlist" id="bmlist">${mh}</div><div class="nbtns"><button class="nbtn" onclick="bBack()">⬅</button><button class="nbtn" onclick="bStart()">⏮</button><button class="nbtn" onclick="bFwd()">➡</button></div></div>
       </div>
-      <div class="sec"><h3>${t('section.why.black')}</h3><p>${op.whyHTML||op.why||''}</p></div>
-      <div class="sec"><h3>${t('section.ideas.black')}</h3><p>${op.ideasHTML||op.ideas||''}</p></div>
+      <div class="sec"><h3>${LANG==='en'?'💭 Why Does Black Play This?':'💭 Tại Sao Đen Chơi Thế Này?'}</h3><p>${op.whyHTML||op.why||''}</p></div>
+      <div class="sec"><h3>${LANG==='en'?'🎯 Counter-Attack Plan':'🎯 Kế Hoạch Phản Công'}</h3><p>${op.ideasHTML||op.ideas||''}</p></div>
       <div class="sec">
-        <h3>⚖️ Điểm Mạnh / Yếu</h3>
+        <h3>${LANG==='en'?'⚖️ Pros / Cons':'⚖️ Điểm Mạnh / Yếu'}</h3>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">✅ MẠNH</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div>
-          <div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">❌ YẾU</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div>
+          <div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'✅ PROS':'✅ MẠNH'}</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div>
+          <div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'❌ CONS':'❌ YẾU'}</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div>
         </div>
       </div>
-      <div class="sec"><h3>🌿 Biến Thể</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
+      <div class="sec"><h3>${LANG==='en'?'🌿 Variations':'🌿 Biến Thể'}</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
       <div class="tip">${op.tip}</div>
     </div>`;
 }

@@ -577,6 +577,9 @@ const openings=[
     why_en:`Bishop b5 attacks the Knight on c6 — the defender of pawn e5. If the Knight is forced away, e5 falls. This is the most-played opening at the top level, combining development with long-term pressure.<br><br><strong>1.e4</strong> — Controls center, opens diagonals for Queen and Bishop.<br><strong>1...e5</strong> — Black mirrors the center.<br><strong>2.Nf3</strong> — Attacks e5, develops naturally (Knights before Bishops).<br><strong>2...Nc6</strong> — Defends e5 by development — the most principled response.<br><strong>3.Bb5</strong> — The Ruy López move! Attacks the Knight that protects e5 — indirect, subtle pressure.`,
     ideas_en:`<strong>White's plan:</strong> After Black handles the Bb5 threat, White continues 0-0, Re1, d3/d4 — building long-term pressure. The threat on e5 and Nc6 never disappears.<br><br><strong>Black's options:</strong> Berlin (3...Nf6, extremely solid — Carlsen's favorite), Morphy (3...a6, chase the Bishop). Black aims for ...d5 counterplay when ready.<br><br><strong>Core theme:</strong> "Slow squeeze" — White improves slightly every move without needing immediate tactics.`,
     tip_en:`💡 "Torture your opponent slowly" — Ruy López creates long-term positional pressure. Every move slightly tightens the grip.`,
+    pros_en:["Continuous strategic pressure","Tested at the highest level","Rich variety of lines"],
+    cons_en:["Complex, requires learning many lines","Black has many solid counter-options"],
+    vars_en:[{n:"Berlin Defense",m:"3...Nf6",d:"Extremely solid, Carlsen favorite. Often leads to early endgame."},{n:"Morphy Defense",m:"3...a6 4.Ba4",d:"Most popular. Black chases the Bishop to a4, flexible development."},{n:"Exchange Variation",m:"4.Bxc6 dxc6",d:"White trades Bishop for Knight, creating doubled pawns for Black."}],
   },
 
   {id:'sicilian',name:'Sicilian Defense',aka:'Phòng thủ Sicily',eco:'B20–B99',cat:'Semi-Open',dif:'advanced',
@@ -597,6 +600,9 @@ const openings=[
     why_en:`Instead of mirroring 1...e5, Black uses c5 to fight for d4 from the flank. This creates a <strong>completely asymmetric position</strong> — White attacks the kingside, Black counterattacks the queenside.<br><br><strong>1...c5</strong> — Controls d4 without occupying the center directly. The asymmetry is intentional.<br><strong>2.Nf3 d6</strong> — Prepares ...Nf6 and ...e5 later.<br><strong>3.d4 cxd4</strong> — Black captures, opening the c-file for the Rook.<br><strong>5...a6 (Najdorf)</strong> — Prevents Nb5+Bb5, prepares ...b5 queenside expansion.`,
     ideas_en:`<strong>Black's plan:</strong> Rook to c8, push ...b5-b4 to pressure Nc3, attack the queenside. Open c-file after cxd4.<br><br><strong>White's plan:</strong> f4-f5 or g4-g5 attacking the Black King. Whoever breaks through first wins — this is why Sicilian creates the sharpest, most decisive games.`,
     tip_en:`💡 Sicilian statistically gives Black the highest win rate vs 1.e4. But it requires serious study — mistakes get punished fast.`,
+    pros_en:['Strongest counterplay for Black vs 1.e4','Asymmetry creates winning chances for both sides','Statistics: Black wins most vs any 1.e4 response'],
+    cons_en:['Extremely complex, requires heavy theory','White has many sharp gambits','Small mistakes lead to quick losses'],
+    vars_en:[{n:'Najdorf (5...a6)',m:'5...a6',d:'Most popular worldwide. Stops Nb5, prepares ...b5 expansion. Used by Kasparov, Fischer, Carlsen.'},{n:'Dragon (5...g6)',m:'5...g6 6.Be3 Bg7',d:'Bishop g7 on the long diagonal. Extremely sharp — White attacks kingside, Black counterattacks c-file.'},{n:'Scheveningen (5...e6)',m:'5...e6',d:'Solid center with d6+e6. Less attacking than Dragon but much more stable.'}],
   },
 
   {id:'italian',name:'Italian Game',aka:'Giuoco Piano',eco:'C50–C59',cat:'Open',dif:'beginner',
@@ -618,6 +624,9 @@ const openings=[
     why_en:`Bishop c4 aims directly at f7 — the weakest square in Black's position (only defended by the King). The most classical opening, every move follows the principles.<br><br><strong>1.e4</strong> — Controls center, opens diagonals.<br><strong>2.Nf3</strong> — Attacks e5, develops naturally.<br><strong>3.Bc4</strong> — Aims at f7. Why is f7 important? It's the weakest square in Black's camp — the gateway to the King.`,
     ideas_en:`<strong>Short-term:</strong> Complete development with 0-0, d3/d4, Re1. All pieces pointing at Black's King.<br><br><strong>Long-term:</strong> Attack f7 with Bc4+Ng5+Qf3 threatening Nxf7 or Bxf7+. If Black defends poorly, the game can end in 10-15 moves.`,
     tip_en:`💡 Italian Game is the perfect "school" — every move has a clear reason. Understanding Italian means understanding 80% of opening principles.`,
+    pros_en:['Easy to understand, follows all opening principles','Natural attack on f7 weakness','Little theory, suitable for all levels'],
+    cons_en:['Black has many solid defenses (3...Bc5, 3...Nf6)','Less strategic pressure than Ruy Lopez at top level'],
+    vars_en:[{n:'Giuoco Piano (3...Bc5)',m:'3...Bc5 4.c3 Nf6',d:'Black develops Bishop symmetrically. White often plays d4 to open the center.'},{n:'Two Knights (3...Nf6)',m:'3...Nf6 4.Ng5',d:'Black counterattacks with Knight immediately. Leads to very sharp variations.'},{n:'Evans Gambit (4.b4)',m:'3...Bc5 4.b4!?',d:'White sacrifices b4 pawn to seize center with c3+d4. Ultra-fast development — revived by Kasparov in the 90s.'}],
   },
 
   {id:'qg',name:"Queen's Gambit",aka:'Gambit Hậu',eco:'D06–D69',cat:'Closed',dif:'intermediate',
@@ -641,6 +650,9 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     why_en:`c4 attacks d5, forcing Black to make a decision. It's not a real gambit — White always wins the pawn back. If Black captures, White gets the ideal e4+d4 center.<br><br><strong>1.d4</strong> — Center pawn, immediately protected by the Queen.<br><strong>1...d5</strong> — Black mirrors with a central pawn.<br><strong>2.c4</strong> — Attacks d5. Black must choose: take (QGA), defend (QGD), or counter (Slav/Tarrasch).`,
     ideas_en:`<strong>If QGA (2...dxc4):</strong> White plays e4, takes full center, develops fast, regains the pawn.<br><br><strong>If QGD (2...e6):</strong> Black holds d5 but creates the "Bad Bishop" problem on c8.<br><br><strong>If Slav (2...c6):</strong> Best structure — supports d5 without blocking the c8 Bishop.`,
     tip_en:`💡 Queen's Gambit teaches why the center matters — whoever controls e4+d4 usually controls the game.`,
+    pros_en:['Very solid and strategically sound','Played at every major tournament','White always has initiative and space'],
+    cons_en:['Slower than open games, fewer sharp tactics','Requires deep understanding of pawn structures and bad bishop'],
+    vars_en:[{n:'QGA (Accepted)',m:'2...dxc4',d:'Black takes the pawn, White develops fast and seizes full center. Black must play precisely to equalize.'},{n:'QGD (Declined)',m:'2...e6 3.Nc3 Nf6',d:'Most solid. Black holds the center but must deal with the Bad Bishop on c8 throughout.'},{n:'Slav Defense',m:'2...c6 3.Nf3 Nf6',d:'Most balanced. Black supports d5 with c6, keeping c8 Bishop free. Very popular at top level.'}],
   },
 
   {id:'kid',name:"King's Indian Defense",eco:'E60–E99',cat:'Indian',dif:'advanced',
@@ -661,6 +673,9 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     why_en:`Hypermodern defense — Black voluntarily gives White the center e4+d4, then destroys it.<br><br><strong>1...Nf6</strong> — Controls e4 with a piece, not a pawn.<br><strong>2...g6 3...Bg7</strong> — The "Dragon Bishop" on the long a1-h8 diagonal — the key weapon once the center opens.<br><strong>4...d6</strong> — Supports ...e5 later.<br><strong>5...0-0 6...e5!</strong> — The critical break — directly attacks d4.`,
     ideas_en:`<strong>Black's plan:</strong> After ...e5, if d4-d5 then attack kingside with ...f5-f4. If dxe5 then dxe5, Bishop g7 wakes up and dominates the long diagonal.<br><br><strong>Race:</strong> White attacks queenside (c5, b4-b5), Black attacks kingside — whoever breaks through first wins. Kasparov won the World Championship multiple times with KID.`,
     tip_en:`💡 KID teaches the most important lesson: space is not everything — initiative and counterplay at the right moment are stronger.`,
+    pros_en:['Extremely strong counterattack when understood correctly','Creates unbalanced and unpredictable games','Kasparov won the World Championship multiple times with KID'],
+    cons_en:['Dangerous if Black does not counterattack in time','Requires deep knowledge of specific variations','White has significant space advantage'],
+    vars_en:[{n:'Classical (5.Nf3)',m:'5.Nf3 0-0 6.Be2 e5',d:'White develops stably without rushing. Leads to balanced two-wing battle.'},{n:'Samisch (5.f3)',m:'5.f3 0-0 6.Be3',d:'White is aggressive — f3 prepares g4-g5 kingside attack. Black must counterattack queenside fast.'},{n:'Four Pawns Attack (5.f4)',m:'5.f4 0-0 6.Nf3',d:'White builds a massive pawn wall. Very risky — if Black breaks through, the position collapses.'}],
   },
 
   {id:'french',name:'French Defense',aka:'Phòng thủ Pháp',eco:'C00–C19',cat:'Semi-Open',dif:'intermediate',
@@ -681,6 +696,9 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     why_en:`Black builds a fortress with e6+d5, accepting cramped space for a solid structure and clear counterplay.<br><br><strong>1...e6</strong> — Prepares ...d5 next move. Unlike 1...c6 (Caro-Kann), this blocks the c8 Bishop — French's main trade-off.<br><strong>2...d5</strong> — Challenges e4 directly. The e6+d5 chain creates a wedge into White's position.<br><strong>3...Nf6</strong> — Develops and attacks e4.<br><strong>4...dxe4</strong> — Black captures when favorable.`,
     ideas_en:`<strong>Black's plan:</strong> Push ...c5 to attack d4. If White plays dxc5, Black recaptures and frees the Bad Bishop on c8.<br><br><strong>The "Bad Bishop" problem:</strong> Bishop c8 is blocked by e6 pawn — Black must free it with ...b6+...Ba6 or exchange it to solve this structural issue.`,
     tip_en:`💡 In French, always look for ways to free the Bad Bishop — that's the key to transitioning from defense to attack.`,
+    pros_en:['Solid d5+e6 pawn chain','Clear counterplay with ...c5','Difficult to attack directly in the opening'],
+    cons_en:['Bad Bishop c8 is a burden throughout the game','Black is cramped for space initially'],
+    vars_en:[{n:'Winawer (3...Bb4)',m:'3.Nc3 Bb4',d:'Sharpest. Black pins Nc3 immediately, creating complex doubled pawn structures.'},{n:'Classical (3...Nf6)',m:'3.Nc3 Nf6',d:'Natural development, continues to challenge e4. White often plays Advance or allows exd4.'},{n:'Advance (3.e5)',m:'3.e5 c5',d:'White locks the center. Black counterattacks with c5, targeting the d4 weakness.'}],
   },
 
   {id:'caro',name:'Caro-Kann Defense',eco:'B10–B19',cat:'Semi-Open',dif:'intermediate',
@@ -701,6 +719,9 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     why_en:`Like French but <strong>without the Bad Bishop</strong>. After ...dxe4+...Bf5, Black has a perfect structure with the c8 Bishop freely active.<br><br><strong>1...c6</strong> — Prepares d5, keeps the c8-h3 diagonal open — unlike French's 1...e6.<br><strong>2...d5</strong> — Challenges e4 directly, supported by c6.<br><strong>3.Nc3 dxe4 4.Nxe4 Bf5</strong> — The defining sequence: Bishop comes out immediately to f5, something impossible in French.`,
     ideas_en:`<strong>Black's plan:</strong> After Bf5, develop Nf6, e6, castle short. Then counterattack with ...c5 or ...e5 when ready.<br><br><strong>vs French:</strong> In French, Bc8 is stuck the whole game. In Caro-Kann, it's out by move 4 — a permanent structural advantage.`,
     tip_en:`💡 Caro-Kann is the ideal choice if you want solid play without learning all the complex Sicilian theory.`,
+    pros_en:['Perfect pawn structure, no Bad Bishop','c8 Bishop freely develops to f5','Less theory than Sicilian but equally solid'],
+    cons_en:['Slower than Sicilian, less sharp counterplay','Black often plays passively at the start'],
+    vars_en:[{n:'Classical (4.Nxe4 Bf5)',m:'3.Nc3 dxe4 4.Nxe4 Bf5',d:'Most standard — Bishop comes out to f5 immediately. Structurally superior to French.'},{n:'Advance (3.e5)',m:'3.e5 Bf5',d:'White locks the center. Black frees the Bishop before the pawns close.'},{n:'Exchange (3.exd5)',m:'3.exd5 cxd5',d:'Symmetrical. Usually leads to IQP structure for Black — dynamic but with a weakness.'}],
   },
 
   {id:'london',name:'London System',eco:'D02–D05',cat:'Closed',dif:'beginner',
@@ -723,6 +744,9 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     why_en:`"Set it and forget it" — White plays d4, Nf3, Bf4 regardless of what Black does. Bishop f4 on a strong square, hard to kick away.<br><br><strong>1.d4</strong> — Controls center, Queen protects it immediately.<br><strong>2.Nf3</strong> — Develops Knight naturally, controls e5.<br><strong>3.Bf4</strong> — The London move. Before playing e3, White develops the Bishop to an active square. If e3 first, the Bishop would be locked in.`,
     ideas_en:`<strong>White's plan:</strong> Build the "pyramid" — d4+e3+c3+Bd3+0-0. Then attack slowly or wait for Black mistakes.<br><br><strong>At all levels:</strong> Beginners use it for simplicity. Magnus Carlsen uses it as a psychological weapon — forcing opponents to create their own plan without reacting to White's threats.`,
     tip_en:`💡 London teaches that having a clear plan and executing it patiently can be stronger than deep theoretical knowledge.`,
+    pros_en:['Almost no theory required','Solid, hard to attack quickly','Flexible — can transition to many different structures'],
+    cons_en:['Less initiative and pressure vs strong opponents','Black can create counterplay if they know how','Slightly passive strategically'],
+    vars_en:[{n:'Standard London',m:'4.e3 e6 5.Bd3 c5',d:'Standard structure. White plays Bd3, 0-0, Nbd2. Black often pushes c5 to break center.'},{n:'London vs KID',m:'3...g6 4.e3 Bg7 5.Be2',d:'When Black plays KID setup, White adjusts with Be2 instead of Bd3 to avoid the Bishop diagonal.'}],
   },
 
 ];
@@ -789,8 +813,8 @@ function renderDetail(op){
       </div>
       <div class="sec"><h3>${LANG==='en'?'💭 Why Play This Opening?':'💭 Tại Sao Chơi Opening Này?'}</h3><p>${LANG==='en'&&op.why_en?op.why_en:op.why}</p></div>
       <div class="sec"><h3>${LANG==='en'?'🎯 Strategic Ideas':'🎯 Ý Tưởng Chiến Lược'}</h3><p>${LANG==='en'&&op.ideas_en?op.ideas_en:op.ideas}</p><div class="tip">${LANG==='en'&&op.tip_en?op.tip_en:op.tip}</div></div>
-      <div class="sec"><h3>${t('section.proscons')}</h3><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.strong')}</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div><div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.weak')}</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div></div></div>
-      <div class="sec"><h3>${t('section.vars')}</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
+      <div class="sec"><h3>${t('section.proscons')}</h3><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.strong')}</div><div class="pills">${(LANG==='en'&&op.pros_en?op.pros_en:op.pros).map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div><div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.weak')}</div><div class="pills">${(LANG==='en'&&op.cons_en?op.cons_en:op.cons).map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div></div></div>
+      <div class="sec"><h3>${t('section.vars')}</h3>${(LANG==='en'&&op.vars_en?op.vars_en:op.vars).map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
     </div>`;
 }
 

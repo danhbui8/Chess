@@ -1104,7 +1104,6 @@ function renderBlackDetail(op) {
   bBlackIdx = bBlackStates.length - 1;
   const allM = [];
   op.moves.forEach(m => { if(m.w) allM.push(m.w); if(m.b) allM.push(m.b); });
-  const dl = {beginner:'Co ban', intermediate:'Trung cap', advanced:'Nang cao'};
   const dlV = {beginner:t('diff.beginner'), intermediate:t('diff.intermediate'), advanced:t('diff.advanced')};
   const dc = {beginner:'db', intermediate:'di', advanced:'da'};
   const catColor = {'vs 1.e4':'#e94560','vs 1.d4':'#2196f3'};
@@ -1193,4 +1192,3 @@ document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')oBack();if(e.key=
 </script>
 </body>
 </html>
- 

@@ -1099,4 +1099,96 @@ let curBlack = blackOpenings[0];
 let bBlackStates = [];
 let bBlackIdx = 0;
 
-function r
+function renderBlackDetail(op) {
+  bBlackStates = getBStates(op);
+  bBlackIdx = bBlackStates.length - 1;
+  const allM = [];
+  op.moves.forEach(m => { if(m.w) allM.push(m.w); if(m.b) allM.push(m.b); });
+  const dlV = {beginner:t('diff.beginner'), intermediate:t('diff.intermediate'), advanced:t('diff.advanced')};
+  const dc = {beginner:'db', intermediate:'di', advanced:'da'};
+  const catColor = {'vs 1.e4':'#e94560','vs 1.d4':'#2196f3'};
+  const hl = bBlackIdx > 0 ? getHL(allM[bBlackIdx-1]) : [];
+  let mh = '';
+  let mi = 0;
+  for(let i=0;i<op.moves.length;i++){
+    const m=op.moves[i];
+    const cur=bBlackIdx===mi+1||bBlackIdx===(m.b?mi+2:-1);
+    mh+=`<div class="mi${cur?' cur':''}" onclick="gotoBlack(${i})"><span class="mn">${i+1}.</span><span class="mw">${m.w||''}</span><span class="mb">${m.b||''}</span></div>`;
+    mi+=(m.w?1:0)+(m.b?1:0);
+  }
+  document.getElementById('bpanel').innerHTML=`
+    <div class="dhead">
+      <h2>${op.name}</h2>
+      <span class="eco-b">ECO ${op.eco}</span>
+      <span style="background:${catColor[op.cat]||'#0f3460'};color:#fff;font-size:.75rem;padding:3px 10px;border-radius:20px;margin-left:8px;font-weight:700;">${op.cat}</span>
+      <span class="diff ${dc[op.dif]}" style="margin-left:8px;">${dlV[op.dif]}</span>
+    </div>
+    <div class="dbody">
+      <div class="bsect">
+        <div><div id="bbrd">${boardHTML(bBlackStates[bBlackIdx],hl)}</div></div>
+        <div class="mnav"><h4>${LANG==='en'?'🎯 Moves':'🎯 Các Nước Đi'}</h4><div class="mlist" id="bmlist">${mh}</div><div class="nbtns"><button class="nbtn" onclick="bBack()">⬅</button><button class="nbtn" onclick="bStart()">⏮</button><button class="nbtn" onclick="bFwd()">➡</button></div></div>
+      </div>
+      <div class="sec"><h3>${LANG==='en'?'💭 Why Does Black Play This?':'💭 Tại Sao Đen Chơi Thế Này?'}</h3><p>${op.whyHTML||op.why||''}</p></div>
+      <div class="sec"><h3>${LANG==='en'?'🎯 Counter-Attack Plan':'🎯 Kế Hoạch Phản Công'}</h3><p>${op.ideasHTML||op.ideas||''}</p></div>
+      <div class="sec">
+        <h3>${LANG==='en'?'⚖️ Pros / Cons':'⚖️ Điểm Mạnh / Yếu'}</h3>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'✅ PROS':'✅ MẠNH'}</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div>
+          <div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'❌ CONS':'❌ YẾU'}</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div>
+        </div>
+      </div>
+      <div class="sec"><h3>${LANG==='en'?'🌿 Variations':'🌿 Biến Thể'}</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
+      <div class="tip">${op.tip}</div>
+    </div>`;
+}
+
+function updBlackBoard() {
+  const allM=[];curBlack.moves.forEach(m=>{if(m.w)allM.push(m.w);if(m.b)allM.push(m.b);});
+  const hl=bBlackIdx>0?getHL(allM[bBlackIdx-1]):[];
+  const el=document.getElementById('bbrd');if(el)el.innerHTML=boardHTML(bBlackStates[bBlackIdx],hl);
+  const items=document.querySelectorAll('#bmlist .mi');items.forEach(el=>el.classList.remove('cur'));
+  let mi=0;for(let i=0;i<curBlack.moves.length;i++){const m=curBlack.moves[i];const wi=mi+1,bi=m.b?mi+2:-1;if(bBlackIdx===wi||bBlackIdx===bi){if(items[i])items[i].classList.add('cur');}mi+=(m.w?1:0)+(m.b?1:0);}
+}
+function gotoBlack(pi){let mi=0;for(let i=0;i<=pi;i++){const m=curBlack.moves[i];if(m.w)mi++;if(m.b)mi++;}bBlackIdx=Math.min(mi,bBlackStates.length-1);updBlackBoard();}
+function bBack(){if(bBlackIdx>0){bBlackIdx--;updBlackBoard();}}
+function bFwd(){if(bBlackIdx<bBlackStates.length-1){bBlackIdx++;updBlackBoard();}}
+function bStart(){bBlackIdx=0;updBlackBoard();}
+
+function renderBlackCards() {
+  const dc={beginner:'db',intermediate:'di',advanced:'da'};
+  const dlV=()=>({beginner:t('diff.beginner'),intermediate:t('diff.intermediate'),advanced:t('diff.advanced')});
+  const catColor={'vs 1.e4':'#e94560','vs 1.d4':'#2196f3'};
+  document.getElementById('bcards').innerHTML = blackOpenings.map(op => `
+    <div class="ocard${curBlack.id===op.id?' active':''}" onclick="selBlack('${op.id}')">
+      <div class="nm">${op.name}</div>
+      <div class="ec"><span style="color:${catColor[op.cat]||'#90b8d8'};font-weight:700;">${op.cat}</span> · ECO ${op.eco}</div>
+      <div class="mp">${op.moves.map((m,i)=>`${i+1}.${m.w}${m.b?' '+m.b:''}`).join(' ')}</div>
+      <span class="diff ${dc[op.dif]}">${dlV()[op.dif]}</span>
+    </div>`).join('');
+}
+function selBlack(id) {
+  curBlack = blackOpenings.find(o=>o.id===id);
+  renderBlackCards();
+  renderBlackDetail(curBlack);
+}
+
+// ==== TABS ====
+function switchTab(evt,tab){
+  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  evt.currentTarget.classList.add('active');
+  if(tab==='practice'){if(!gBd.length)initGame();else renderGame();}
+  if(tab==='openings'){renderOCards();renderDetail(curOp);}
+  if(tab==='black'){renderBlackCards();renderBlackDetail(curBlack);}
+  if(tab==='history')loadHistory();
+  if(tab==='basics')renderBasics();
+}
+
+// ==== INIT ====
+renderOCards();renderDetail(openings[0]);
+applyInitialLang();
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')oBack();if(e.key==='ArrowRight')oFwd();});
+</script>
+</body>
+</html>

@@ -1275,11 +1275,11 @@ function renderBlackDetail(op) {
       <div class="sec">
         <h3>${LANG==='en'?'⚖️ Pros / Cons':'⚖️ Điểm Mạnh / Yếu'}</h3>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'✅ PROS':'✅ MẠNH'}</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div>
-          <div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'❌ CONS':'❌ YẾU'}</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div>
+          <div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'✅ PROS':'✅ MẠNH'}</div><div class="pills">${(LANG==='en'&&op.pros_en?op.pros_en:op.pros).map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div>
+          <div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'❌ CONS':'❌ YẾU'}</div><div class="pills">${(LANG==='en'&&op.cons_en?op.cons_en:op.cons).map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div>
         </div>
       </div>
-      <div class="sec"><h3>${LANG==='en'?'🌿 Variations':'🌿 Biến Thể'}</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
+      <div class="sec"><h3>${LANG==='en'?'🌿 Variations':'🌿 Biến Thể'}</h3>${(LANG==='en'&&op.vars_en?op.vars_en:op.vars).map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
       <div class="tip">${LANG==='en'&&op.tip_new_en?op.tip_new_en:op.tip}</div>
     </div>`;
 }

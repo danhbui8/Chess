@@ -402,6 +402,8 @@ const T = {
     'm1': 'Nĩa (Fork)','m2': 'Ghim (Pin)','m3': 'Xiên (Skewer)','m4': 'Đòn Lộ (Discovered Attack)',
     'm5': 'Điểm Yếu Hàng Cuối (Back Rank)','m6': 'Nước Đệm (Zwischenzug)',
     'm7': 'Hoạt Động Quân','m8': 'Cấu Trúc Tốt','m9': 'Ô Căn Cứ (Outpost)','m10': 'Cột Mở Cho Xe',
+    'acc.why.label': '🤔 Tại sao?',
+    'acc.ben.label': '✅ Lợi ích khi làm đúng',
     'history.title': '📜 Lịch Sử Ván Cờ', 'history.reload': '🔄 Tải lại', 'history.clear': '🗑️ Xoá tất cả',
     'history.empty': 'Chưa có ván cờ nào được lưu.', 'history.loading': 'Đang tải...',
     'history.moves': 'nước', 'history.noserver': '❌ Không thể kết nối server tại localhost:3001',
@@ -1263,10 +1265,11 @@ function selBlack(id) {
 
 
 function renderMidgame(){
+  const L=T[LANG]||{};
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');const v=t(k);if(typeof v==='string')el.innerHTML=v;});
-  document.querySelectorAll('[data-mid-title]').forEach(el=>{const k=el.getAttribute('data-mid-title');const v=t(k);if(typeof v==='string'&&v!==k)el.textContent=v;});
-  document.querySelectorAll('[data-mid-why]').forEach(el=>{const k=el.getAttribute('data-mid-why');const v=t(k+'.why');if(typeof v==='string'&&v!==k+'.why')el.textContent=v;});
-  document.querySelectorAll('[data-mid-tags]').forEach(el=>{const k=el.getAttribute('data-mid-tags');const tags=t(k+'.tags');if(Array.isArray(tags))el.innerHTML=tags.map(tag=>`<span class="acc-tag">${tag}</span>`).join('');});
+  document.querySelectorAll('[data-mid-title]').forEach(el=>{const k=el.getAttribute('data-mid-title');const v=L[k];if(typeof v==='string')el.textContent=v;});
+  document.querySelectorAll('[data-mid-why]').forEach(el=>{const k=el.getAttribute('data-mid-why');const v=L[k+'.why'];if(typeof v==='string')el.textContent=v;});
+  document.querySelectorAll('[data-mid-tags]').forEach(el=>{const k=el.getAttribute('data-mid-tags');const tags=L[k+'.tags'];if(Array.isArray(tags))el.innerHTML=tags.map(tag=>`<span class="acc-tag">${tag}</span>`).join('');});
 }
 
 // ==== TABS ====

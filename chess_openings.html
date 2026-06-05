@@ -117,6 +117,7 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
   <button class="tab-btn active" onclick="switchTab(event,'basics')" data-i18n="tab.basics">📚 Nguyên Lý Cơ Bản</button>
   <button class="tab-btn" onclick="switchTab(event,'openings')">♟️ Openings (White)</button>
   <button class="tab-btn" onclick="switchTab(event,'black')">⚫ Counter-Attacks (Black)</button>
+  <button class="tab-btn" onclick="switchTab(event,'midgame')" data-i18n="tab.midgame">🗡️ Trung Cuộc</button>
   <button class="tab-btn" onclick="switchTab(event,'practice')" data-i18n="tab.practice">⚔️ Luyện Tập</button>
   <button class="tab-btn" onclick="switchTab(event,'history')" data-i18n="tab.history">📜 Lịch Sử</button>
 </div>
@@ -264,6 +265,37 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
   </div>
 </div>
 
+
+<!-- MIDGAME -->
+<div id="tab-midgame" class="tab-content">
+  <div style="max-width:1200px;margin:0 auto;padding:30px 20px;">
+    <div class="sec"><h3 data-i18n="midgame.intro.title">⚔️ Làm Gì Ở Trung Cuộc?</h3><p data-i18n="midgame.intro.text">Khai cuộc kết thúc khi tất cả quân đã phát triển và Vua nhập thành. Trung cuộc là giai đoạn chiến đấu thực sự — kết hợp <strong style="color:#f5c842">chiến thuật sắc bén</strong> và <strong style="color:#f5c842">chiến lược dài hạn</strong> để giành lợi thế.</p></div>
+    <div class="sec" style="margin-bottom:28px;">
+      <h3 data-i18n="midgame.focus.title" style="margin-bottom:16px;">🎯 Ở Trung Cuộc, Tập Trung Vào Điều Gì?</h3>
+      <p data-i18n="midgame.focus.text" style="color:#c0d0e0;line-height:1.7;font-size:.92rem;margin-bottom:20px;">Trung cuộc không có công thức cố định như khai cuộc, nhưng có <strong style="color:#f5c842">4 câu hỏi</strong> bạn phải tự hỏi trước mỗi nước đi. Ai trả lời đúng những câu này sẽ luôn có lợi thế.</p>
+      <div class="cgrid">
+        <div class="ci"><div class="cico">🔍</div><div class="ctit" data-i18n="midgame.f1.title">Tìm Chiến Thuật Trước Mỗi Nước</div><div class="cdesc" data-i18n="midgame.f1.desc">Hỏi: "Tao có fork, pin, skewer nào không? Đối thủ đang đe dọa gì?" Người tìm thấy chiến thuật trước là người thắng quân.</div></div>
+        <div class="ci"><div class="cico">⬆️</div><div class="ctit" data-i18n="midgame.f2.title">Cải Thiện Quân Kém Nhất</div><div class="cdesc" data-i18n="midgame.f2.desc">Nhìn toàn bàn cờ: quân nào của tao đang hoạt động kém nhất? Cải thiện nó. Khi mọi quân đều hoạt động, tấn công tự nhiên sẽ hình thành.</div></div>
+        <div class="ci"><div class="cico">👑</div><div class="ctit" data-i18n="midgame.f3.title">Kiểm Tra An Toàn Vua Hai Bên</div><div class="cdesc" data-i18n="midgame.f3.desc">Vua mình có ô thoát không? Vua đối thủ có điểm yếu nào không? Tấn công vào Vua mở là đòn kết thúc nhanh nhất.</div></div>
+        <div class="ci"><div class="cico">📋</div><div class="ctit" data-i18n="midgame.f4.title">Luôn Có Kế Hoạch Cụ Thể</div><div class="cdesc" data-i18n="midgame.f4.desc">Không đi ngẫu nhiên. Hỏi: điểm yếu của đối thủ ở đâu? Tao muốn tấn công cánh nào? Kế hoạch rõ ràng = mỗi nước đi đều có mục đích.</div></div>
+      </div>
+    </div>
+        <h3 style="color:#e94560;font-size:1.05rem;margin:28px 0 10px;padding-bottom:8px;border-bottom:2px solid #e94560;" data-i18n="midgame.tactic.title">🗡️ Chiến Thuật Cờ Vua</h3>
+    <p style="color:#7090a0;font-size:.83rem;margin-bottom:14px;" data-i18n="midgame.tactic.hint">👆 Bấm vào từng mục để xem chi tiết</p>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">1</span><span class="acc-title" data-mid-title="m1">Nĩa (Fork) — Tấn Công 2 Quân Cùng Lúc</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m1">Một nước đi tạo ra 2 mối đe dọa đồng thời — đối thủ chỉ xử lý được 1. Mã là quân nĩa nguy hiểm nhất vì di chuyển hình chữ L rất khó đoán. Nĩa Mã vào Vua + Xe = chắc chắn thắng Xe. Nĩa tốt vào 2 quân = thắng material. Luôn tìm cơ hội nĩa trước mỗi nước — đặc biệt khi Mã ở trung tâm.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m1"><span class="acc-tag">Thắng material chắc chắn</span><span class="acc-tag">Tạo 2 mối đe dọa từ 1 nước</span><span class="acc-tag">Đối thủ phải chọn cái nào để giữ</span><span class="acc-tag">Mã đặc biệt nguy hiểm khi nĩa</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">2</span><span class="acc-title" data-mid-title="m2">Ghim (Pin) — Khóa Quân Đối Thủ Tại Chỗ</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m2">Ghim tuyệt đối vào Vua: quân bị ghim không thể di chuyển — vi phạm luật. Ghim tương đối vào Hậu hoặc Xe: quân không dám di chuyển vì sẽ mất quân giá trị cao hơn. Mỗi quân bị ghim bị giảm 1 quân tấn công. Chiến thuật tiếp theo: tấn công quân bị ghim bằng thêm quân khác để buộc trao đổi bất lợi.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m2"><span class="acc-tag">Giảm khả năng tấn công đối thủ</span><span class="acc-tag">Tấn công quân bị ghim bằng nhiều quân</span><span class="acc-tag">Tạo điểm yếu lâu dài trong trận địa</span><span class="acc-tag">Tượng và Xe là quân ghim hiệu quả nhất</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">3</span><span class="acc-title" data-mid-title="m3">Xiên (Skewer) — Đòn Ngược Của Ghim</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m3">Khác với Ghim, Skewer buộc quân giá trị cao phải di chuyển để lộ quân giá trị thấp phía sau. Ví dụ: chiếu Vua bằng Tượng, Vua phải tránh, Tượng ăn Xe phía sau. Cực kỳ hiệu quả khi kết hợp với chiếu vì đối thủ không có lựa chọn — phải thoát chiếu trước.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m3"><span class="acc-tag">Thắng material chắc chắn</span><span class="acc-tag">Buộc Vua di chuyển khỏi ô an toàn</span><span class="acc-tag">Kết hợp với chiếu để tăng hiệu quả</span><span class="acc-tag">Tượng và Xe trên cột mở rất nguy hiểm</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">4</span><span class="acc-title" data-mid-title="m4">Đòn Lộ (Discovered Attack) — Vũ Khí Bí Mật</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m4">Di chuyển quân A để quân B phía sau tấn công đối thủ. Tạo 2 mối đe dọa: xử lý quân A đang di chuyển VÀ quân B vừa lộ ra. Discovered Check còn mạnh hơn — quân A có thể đi bất kỳ đâu vì đối thủ phải thoát chiếu trước. Đây là đòn khó phòng thủ nhất trong cờ vua.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m4"><span class="acc-tag">Tạo 2 mối đe dọa đồng thời</span><span class="acc-tag">Quân di chuyển có thể ăn thêm material</span><span class="acc-tag">Cực khó phòng thủ hoàn toàn</span><span class="acc-tag">Discovered Check = gần như nước đi tự do</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">5</span><span class="acc-title" data-mid-title="m5">Điểm Yếu Hàng Cuối (Back Rank)</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m5">Sau nhập thành, Vua bị nhốt sau hàng tốt h-g-f. Nếu không có ô thoát, Xe đối thủ chiếu hết ở hàng 1 hoặc hàng 8. Đây là lý do đẩy h3 (Trắng) hoặc h6 (Đen) là nước phòng thủ quan trọng — tạo ô thoát cho Vua. Luôn kiểm tra hàng cuối của cả hai bên.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m5"><span class="acc-tag">Tránh chiếu hết bất ngờ</span><span class="acc-tag">Vua có ô thoát an toàn</span><span class="acc-tag">Nhận biết cơ hội tấn công hàng cuối</span><span class="acc-tag">h3/h6 là nước phòng thủ thiết yếu</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">6</span><span class="acc-title" data-mid-title="m6">Nước Đệm (Zwischenzug) — Đừng Vội Đổi Quân</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m6">Thay vì đổi quân theo thứ tự dự kiến, chèn 1 nước đi có giá trị cao hơn trước. Ví dụ: thay vì bắt lại ngay, chiếu Vua trước để giành thêm lợi thế. Đây là kỹ thuật phân biệt người chơi trung bình với người giỏi — luôn hỏi có nước nào tốt hơn trước khi bắt lại không.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m6"><span class="acc-tag">Thắng thêm material bất ngờ</span><span class="acc-tag">Cải thiện vị trí trước khi đổi quân</span><span class="acc-tag">Đối thủ bị bất ngờ hoàn toàn</span><span class="acc-tag">Phân biệt người chơi giỏi và trung bình</span></div></div></div></div>
+    <h3 style="color:#4caf50;font-size:1.05rem;margin:32px 0 10px;padding-bottom:8px;border-bottom:2px solid #4caf50;" data-i18n="midgame.strategy.title">🏛️ Chiến Lược Trung Cuộc</h3>
+    <p style="color:#7090a0;font-size:.83rem;margin-bottom:14px;" data-i18n="midgame.strategy.hint">👆 Chiến thuật thắng quân — Chiến lược thắng ván cờ</p>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#4caf50;">7</span><span class="acc-title" data-mid-title="m7">Hoạt Động Quân — Quân Tốt = Quân Hoạt Động</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m7">Quân không hoạt động là quân chết — không tấn công, không phòng thủ hiệu quả. Trước khi tấn công, hỏi: quân nào của tao đang kém nhất? rồi cải thiện nó. Tượng xấu bị chặn bởi tốt của mình = gần như vô dụng. Mã ở góc bàn = nửa giá trị. Nguyên tắc vàng: mỗi nước đi phải cải thiện hoạt động ít nhất 1 quân.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m7"><span class="acc-tag">Mọi quân đóng góp vào tấn công</span><span class="acc-tag">Tấn công mạnh hơn khi quân hợp lực</span><span class="acc-tag">Không có quân chết lãng phí</span><span class="acc-tag">Luôn cải thiện quân kém nhất trước</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#4caf50;">8</span><span class="acc-title" data-mid-title="m8">Cấu Trúc Tốt — Xương Sống Của Vị Trí</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m8">Tốt cô lập: không có tốt bên cạnh bảo vệ, phải dùng quân để che — điểm yếu lâu dài. Tốt đôi: 2 tốt cùng cột = 2 điểm yếu. Tốt thông: không có tốt đối thủ chặn đường phong Hậu = lợi thế quyết định ở endgame. Hiểu cấu trúc tốt = biết chính xác kế hoạch cần làm. Tạo điểm yếu tốt cho đối thủ là mục tiêu chiến lược quan trọng nhất.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m8"><span class="acc-tag">Nhận biết và khai thác điểm yếu tốt đối thủ</span><span class="acc-tag">Biết khi nào nên tạo passed pawn</span><span class="acc-tag">Tránh tạo điểm yếu tốt cho chính mình</span><span class="acc-tag">Lập kế hoạch tấn công và phòng thủ đúng</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#4caf50;">9</span><span class="acc-title" data-mid-title="m9">Ô Căn Cứ (Outpost) — Pháo Đài Giữa Bàn Cờ</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m9">Outpost là ô không thể bị tốt đối thủ tấn công, nằm sâu trong trận địa địch. Mã ở outpost trung tâm như d5, e5, c5 = quân cực kỳ mạnh, kiểm soát nhiều ô quan trọng và rất khó bị đuổi. Cách tạo outpost: trao đổi tốt để loại bỏ tốt đối thủ có thể đánh vào ô đó. Mã ở outpost thường mạnh hơn Tượng trong vị trí đóng.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m9"><span class="acc-tag">Mã mạnh hơn Tượng ở vị trí đóng</span><span class="acc-tag">Kiểm soát ô quan trọng lâu dài</span><span class="acc-tag">Hạn chế tầm hoạt động quân đối thủ</span><span class="acc-tag">Rất khó bị đối thủ phá vỡ</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#4caf50;">10</span><span class="acc-title" data-mid-title="m10">Cột Mở Cho Xe — Kích Hoạt Vũ Khí Hạng Nặng</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m10">Xe chỉ thực sự mạnh trên cột mở không có tốt chặn. Xe trên cột mở = kiểm soát hoàn toàn cột đó. Hai Xe trên cùng cột mở = sức mạnh gấp đôi. Xe trên hàng thứ 7 (Trắng) hoặc hàng thứ 2 (Đen) = cực nguy hiểm, tấn công tốt và nhốt Vua. Đôi Xe vào hàng 7 = gần như chiếu hết.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m10"><span class="acc-tag">Xe phát huy tối đa sức mạnh</span><span class="acc-tag">Kiểm soát cột và hàng quan trọng</span><span class="acc-tag">Áp lực lên tốt và Vua đối thủ</span><span class="acc-tag">Đôi Xe hàng 7 = gần như thắng</span></div></div></div></div>
+  </div>
+</div>
 <!-- HISTORY -->
 <div id="tab-history" class="tab-content">
   <div style="max-width:900px;margin:0 auto;padding:28px 20px;">
@@ -370,6 +402,28 @@ const T = {
     'label.strong': '✅ MẠNH', 'label.weak': '❌ YẾU',
     'label.moves': '🎯 Các Nước Đi',
     'diff.beginner': 'Cơ bản', 'diff.intermediate': 'Trung cấp', 'diff.advanced': 'Nâng cao',
+    'tab.midgame': '🗡️ Trung Cuộc',
+    'midgame.intro.title': '⚔️ Làm Gì Ở Trung Cuộc?',
+    'midgame.intro.text': 'Khai cuộc kết thúc khi tất cả quân đã phát triển và Vua nhập thành. Trung cuộc là giai đoạn chiến đấu thực sự.',
+    'midgame.tactic.title': '🗡️ Chiến Thuật Cờ Vua',
+    'midgame.tactic.hint': '👆 Bấm vào từng mục để xem chi tiết',
+    'midgame.strategy.title': '🏛️ Chiến Lược Trung Cuộc',
+    'midgame.strategy.hint': '👆 Chiến thuật thắng quân — Chiến lược thắng ván cờ',
+    'm1': 'Nĩa (Fork)','m2': 'Ghim (Pin)','m3': 'Xiên (Skewer)','m4': 'Đòn Lộ (Discovered Attack)',
+    'm5': 'Điểm Yếu Hàng Cuối (Back Rank)','m6': 'Nước Đệm (Zwischenzug)',
+    'm7': 'Hoạt Động Quân','m8': 'Cấu Trúc Tốt','m9': 'Ô Căn Cứ (Outpost)','m10': 'Cột Mở Cho Xe',
+    'midgame.focus.title': '🎯 Ở Trung Cuộc, Tập Trung Vào Điều Gì?',
+    'midgame.focus.text': 'Trung cuộc không có công thức cố định như khai cuộc, nhưng có <strong style="color:#f5c842">4 câu hỏi</strong> bạn phải tự hỏi trước mỗi nước đi. Ai trả lời đúng những câu này sẽ luôn có lợi thế.',
+    'midgame.f1.title': 'Tìm Chiến Thuật Trước Mỗi Nước',
+    'midgame.f1.desc': 'Hỏi: "Tao có fork, pin, skewer nào không? Đối thủ đang đe dọa gì?" Người tìm thấy chiến thuật trước là người thắng quân.',
+    'midgame.f2.title': 'Cải Thiện Quân Kém Nhất',
+    'midgame.f2.desc': 'Nhìn toàn bàn cờ: quân nào đang hoạt động kém nhất? Cải thiện nó. Khi mọi quân đều hoạt động, tấn công tự nhiên sẽ hình thành.',
+    'midgame.f3.title': 'Kiểm Tra An Toàn Vua Hai Bên',
+    'midgame.f3.desc': 'Vua mình có ô thoát không? Vua đối thủ có điểm yếu nào không? Tấn công vào Vua mở là đòn kết thúc nhanh nhất.',
+    'midgame.f4.title': 'Luôn Có Kế Hoạch Cụ Thể',
+    'midgame.f4.desc': 'Không đi ngẫu nhiên. Hỏi: điểm yếu của đối thủ ở đâu? Tao muốn tấn công cánh nào? Kế hoạch rõ ràng = mỗi nước đi đều có mục đích.',
+    'acc.why.label': '🤔 Tại sao?',
+    'acc.ben.label': '✅ Lợi ích khi làm đúng',
     'history.title': '📜 Lịch Sử Ván Cờ', 'history.reload': '🔄 Tải lại', 'history.clear': '🗑️ Xoá tất cả',
     'history.empty': 'Chưa có ván cờ nào được lưu.', 'history.loading': 'Đang tải...',
     'history.moves': 'nước', 'history.noserver': '❌ Không thể kết nối server tại localhost:3001',
@@ -412,6 +466,48 @@ const T = {
     'label.strong': '✅ PROS', 'label.weak': '❌ CONS',
     'label.moves': '🎯 Moves',
     'diff.beginner': 'Beginner', 'diff.intermediate': 'Intermediate', 'diff.advanced': 'Advanced',
+    'midgame.focus.title': '🎯 What To Focus On In The Middlegame?',
+    'midgame.focus.text': 'The middlegame has no fixed formula like the opening, but there are <strong style="color:#f5c842">4 questions</strong> you must ask yourself before every move. Whoever answers these correctly will always have the advantage.',
+    'midgame.f1.title': 'Look For Tactics Before Every Move',
+    'midgame.f1.desc': 'Ask: "Do I have a fork, pin, or skewer? What is my opponent threatening?" Whoever spots tactics first wins material.',
+    'midgame.f2.title': 'Improve Your Worst Piece',
+    'midgame.f2.desc': 'Scan the board: which of my pieces is the least active? Improve it. When all your pieces are active, attacks form naturally.',
+    'midgame.f3.title': 'Check King Safety on Both Sides',
+    'midgame.f3.desc': 'Does your King have an escape square? Does your opponent King have weaknesses? Attacking an exposed King is the fastest way to win.',
+    'midgame.f4.title': 'Always Have a Concrete Plan',
+    'midgame.f4.desc': 'Never move randomly. Ask: where is my opponent weakness? Which side do I want to attack? A clear plan means every move has purpose.',
+    'tab.midgame': '🗡️ Middlegame',
+    'midgame.intro.title': '⚔️ What To Do In The Middlegame?',
+    'midgame.intro.text': 'The opening ends when all pieces are developed and the King is castled. The middlegame is where the real battle begins.',
+    'midgame.tactic.title': '🗡️ Chess Tactics',
+    'midgame.tactic.hint': '👆 Click each tactic to see how to use it',
+    'midgame.strategy.title': '🏛️ Middlegame Strategy',
+    'midgame.strategy.hint': '👆 Tactics win pieces — Strategy wins games',
+    'm1':'Fork — Attack 2 Pieces At Once','m2':'Pin — Lock Opponent Piece In Place',
+    'm3':'Skewer — The Reverse Pin','m4':'Discovered Attack — The Secret Weapon',
+    'm5':'Back Rank Weakness — Most Common Trap','m6':'Zwischenzug — Do Not Rush the Exchange',
+    'm7':'Piece Activity — Good Piece = Active Piece','m8':'Pawn Structure — The Backbone',
+    'm9':'Outpost — A Fortress in the Center','m10':'Open Files for Rooks',
+    'm1.why':'One move creates two threats — opponent can only handle one. Knights are most dangerous because of L-shape movement. A Knight fork on King + Rook guarantees winning the Rook.',
+    'm1.tags':['Win material for certain','2 threats from 1 move','Opponent must choose which to save','Knights especially dangerous'],
+    'm2.why':'Absolute pin to King: piece cannot move — illegal. Relative pin to Queen or Rook: piece dare not move or loses more valuable piece behind. Follow-up: pile more attackers on the pinned piece.',
+    'm2.tags':['Reduces opponent attacking power','Attack pinned piece with more pieces','Creates long-term weakness','Bishops and Rooks best for pinning'],
+    'm3.why':'Unlike a Pin, a Skewer forces the valuable piece to move and exposes the less-valuable piece behind it. Combine with check so the opponent has no choice.',
+    'm3.tags':['Win material for certain','Forces King from safe square','Combine with check for best effect','Bishops and Rooks on open lines'],
+    'm4.why':'Move piece A to reveal an attack by piece B. Creates 2 simultaneous threats. Discovered Check is even stronger — piece A can go anywhere because opponent must get out of check first.',
+    'm4.tags':['Creates 2 threats at once','Moving piece can also capture','Nearly impossible to fully defend','Discovered Check = almost free move'],
+    'm5.why':'After castling, the King is trapped behind h-g-f pawns. Without an escape square, opponent Rook delivers back rank checkmate. h3 or h6 gives the King a flight square.',
+    'm5.tags':['Avoid surprise checkmate','King gets an escape square','Spot back rank attack chances','h3/h6 is essential defense'],
+    'm6.why':'Instead of exchanging in expected order, insert a stronger move first. Always ask: is there something better before I take back? Opponents rarely see it coming.',
+    'm6.tags':['Win extra material unexpectedly','Improve position before exchanging','Opponent completely surprised','Separates good from average players'],
+    'm7.why':'An inactive piece is a dead piece. Before attacking, ask: which of my pieces is the worst? then improve it. Bad bishop blocked by own pawns is nearly useless. Knight on the rim is dim.',
+    'm7.tags':['Every piece contributes to attack','Stronger attacks with all pieces','No wasted dead pieces','Always improve your worst piece first'],
+    'm8.why':'Isolated pawn: must use pieces to guard — permanent weakness. Doubled pawn: 2 weaknesses same file. Passed pawn: no enemy pawns blocking promotion = decisive endgame advantage.',
+    'm8.tags':['Spot and exploit pawn weaknesses','Know when to create passed pawn','Avoid creating own weaknesses','Make the right plan'],
+    'm9.why':'An outpost is a square enemy pawns cannot attack, deep in opponent territory. A Knight on a central outpost controls key squares and is very hard to remove. Knights on outposts beat Bishops in closed positions.',
+    'm9.tags':['Knight beats Bishop in closed positions','Long-term control of key squares','Limits opponent piece mobility','Hard for opponent to break down'],
+    'm10.why':'Rooks are only powerful on open files with no blocking pawns. A Rook on the 7th rank attacks undeveloped pawns and traps the King. Double Rooks on the 7th = nearly checkmate.',
+    'm10.tags':['Rooks reach maximum potential','Control key files and ranks','Pressure on pawns and King','Double Rooks on 7th = nearly winning'],
     'history.title': '📜 Game History', 'history.reload': '🔄 Reload', 'history.clear': '🗑️ Clear All',
     'history.empty': 'No games saved yet.', 'history.loading': 'Loading...',
     'history.moves': 'moves', 'history.noserver': '❌ Cannot connect to server at localhost:3001',
@@ -478,6 +574,7 @@ function setLang(lang) {
   if (id === 'tab-practice') renderGame();
   if (id === 'tab-history') loadHistory();
   if (id === 'tab-basics') renderBasics();
+  if (id === 'tab-midgame') renderMidgame();
 }
 
 function renderBasics() {
@@ -580,6 +677,8 @@ const openings=[
     pros_en:["Continuous strategic pressure","Tested at the highest level","Rich variety of lines"],
     cons_en:["Complex, requires learning many lines","Black has many solid counter-options"],
     vars_en:[{n:"Berlin Defense",m:"3...Nf6",d:"Extremely solid, Carlsen favorite. Often leads to early endgame."},{n:"Morphy Defense",m:"3...a6 4.Ba4",d:"Most popular. Black chases the Bishop to a4, flexible development."},{n:"Exchange Variation",m:"4.Bxc6 dxc6",d:"White trades Bishop for Knight, creating doubled pawns for Black."}],
+    annotations:[null, "e4 — Chiếm 2 ô trung tâm, mở đường cho Hậu và Tượng. Nước đi tấn công nhất của Trắng.", "e5 — Đen cũng chiếm trung tâm. Tốt e5 kiểm soát d4 và f4, ngăn Trắng đẩy d4.", "Nf3 — Phát triển Mã, tấn công tốt e5 theo đúng nguyên tắc. Kiểm soát ô e5, d4, g5.", "Nc6 — Bảo vệ tốt e5 bằng cách phát triển quân — nước hợp lý và đúng nguyên tắc nhất.", "Bb5 — Nét đặc trưng Ruy López! Không tấn công e5 trực tiếp mà tấn công Mã c6 — người bảo vệ e5. Áp lực gián tiếp: nếu Mã c6 bị mất, tốt e5 mất điểm tựa và có thể bị ăn bằng Nxe5."],
+    annotations_en:[null, "e4 — Controls 2 central squares, opens lines for Queen and Bishop. The most aggressive first move for White.", "e5 — Black mirrors the center. The e5 pawn controls d4 and f4, preventing White from expanding.", "Nf3 — Develops the Knight, attacks the e5 pawn following the principle (Knights before Bishops). Controls e5, d4, g5.", "Nc6 — Defends e5 by development — the most principled response.", "Bb5 — The Ruy López move! Not attacking e5 directly but targeting Nc6 — the e5 defender. Indirect pressure: if Nc6 is lost or forced away, e5 falls to Nxe5."],
   },
 
   {id:'sicilian',name:'Sicilian Defense',aka:'Phòng thủ Sicily',eco:'B20–B99',cat:'Semi-Open',dif:'advanced',
@@ -603,6 +702,8 @@ const openings=[
     pros_en:['Strongest counterplay for Black vs 1.e4','Asymmetry creates winning chances for both sides','Statistics: Black wins most vs any 1.e4 response'],
     cons_en:['Extremely complex, requires heavy theory','White has many sharp gambits','Small mistakes lead to quick losses'],
     vars_en:[{n:'Najdorf (5...a6)',m:'5...a6',d:'Most popular worldwide. Stops Nb5, prepares ...b5 expansion. Used by Kasparov, Fischer, Carlsen.'},{n:'Dragon (5...g6)',m:'5...g6 6.Be3 Bg7',d:'Bishop g7 on the long diagonal. Extremely sharp — White attacks kingside, Black counterattacks c-file.'},{n:'Scheveningen (5...e6)',m:'5...e6',d:'Solid center with d6+e6. Less attacking than Dragon but much more stable.'}],
+    annotations:[null, "e4 — Trắng chiếm trung tâm tối đa, mở đường phát triển tất cả các quân.", "1...c5 — Thiên tài! Thay vì 1...e5 đối xứng, Đen dùng c5 kiểm soát ô d4 từ cánh Hậu. Tạo game bất đối xứng hoàn toàn — Trắng tấn công cánh Vua, Đen phản công cánh Hậu. Ai nhanh hơn thắng."],
+    annotations_en:[null, "e4 — White takes maximum center, opening development lines for all pieces.", "1...c5 — Brilliant! Instead of mirroring 1...e5, Black uses c5 to control d4 from the flank. Creates a fully asymmetric game — White attacks kingside, Black counterattacks queenside. Whoever is faster wins."],
   },
 
   {id:'italian',name:'Italian Game',aka:'Giuoco Piano',eco:'C50–C59',cat:'Open',dif:'beginner',
@@ -627,6 +728,8 @@ const openings=[
     pros_en:['Easy to understand, follows all opening principles','Natural attack on f7 weakness','Little theory, suitable for all levels'],
     cons_en:['Black has many solid defenses (3...Bc5, 3...Nf6)','Less strategic pressure than Ruy Lopez at top level'],
     vars_en:[{n:'Giuoco Piano (3...Bc5)',m:'3...Bc5 4.c3 Nf6',d:'Black develops Bishop symmetrically. White often plays d4 to open the center.'},{n:'Two Knights (3...Nf6)',m:'3...Nf6 4.Ng5',d:'Black counterattacks with Knight immediately. Leads to very sharp variations.'},{n:'Evans Gambit (4.b4)',m:'3...Bc5 4.b4!?',d:'White sacrifices b4 pawn to seize center with c3+d4. Ultra-fast development — revived by Kasparov in the 90s.'}],
+    annotations:[null, "e4 — Chiếm trung tâm, mở đường Hậu và Tượng. Nước đi cơ bản và mạnh nhất.", "e5 — Đen cân bằng trung tâm, mở đường phát triển tương tự.", "Nf3 — Phát triển Mã, đồng thời tấn công tốt e5 để buộc Đen phản ứng.", "Nc6 — Bảo vệ tốt e5 bằng cách phát triển — cách phòng thủ tốt nhất theo nguyên tắc.", "Bc4 — Tượng nhắm thẳng vào f7! Ô này chỉ được Vua bảo vệ — điểm yếu nhất của Đen trong khai cuộc. Bc4 + Ng5 + Qf3 tạo mối đe dọa Nxf7 cực kỳ nguy hiểm."],
+    annotations_en:[null, "e4 — Controls center, opens lines for Queen and Bishop. The most basic and powerful move.", "e5 — Black mirrors the center, opens similar development lines.", "Nf3 — Develops Knight, attacks e5 to force Black to react.", "Nc6 — Defends e5 by development — the best principled response.", "Bc4 — The Bishop aims directly at f7! That square is only defended by the King — the biggest weakness in Black's camp. Bc4 + Ng5 + Qf3 creates a deadly Nxf7 threat."],
   },
 
   {id:'qg',name:"Queen's Gambit",aka:'Gambit Hậu',eco:'D06–D69',cat:'Closed',dif:'intermediate',
@@ -653,6 +756,8 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     pros_en:['Very solid and strategically sound','Played at every major tournament','White always has initiative and space'],
     cons_en:['Slower than open games, fewer sharp tactics','Requires deep understanding of pawn structures and bad bishop'],
     vars_en:[{n:'QGA (Accepted)',m:'2...dxc4',d:'Black takes the pawn, White develops fast and seizes full center. Black must play precisely to equalize.'},{n:'QGD (Declined)',m:'2...e6 3.Nc3 Nf6',d:'Most solid. Black holds the center but must deal with the Bad Bishop on c8 throughout.'},{n:'Slav Defense',m:'2...c6 3.Nf3 Nf6',d:'Most balanced. Black supports d5 with c6, keeping c8 Bishop free. Very popular at top level.'}],
+    annotations:[null, "d4 — Chiếm trung tâm bằng tốt d, được Hậu bảo vệ ngay — rất vững chắc, khó tấn công trực tiếp.", "d5 — Đen chiếm trung tâm đối xứng, phản ứng cân bằng nhất.", "c4 — Gambit Hậu! Tốt c4 tấn công tốt d5. Không phải gambit thật — Trắng luôn lấy lại được. Đen phải chọn: ăn tốt (QGA), từ chối (QGD), hay phản công (Slav)."],
+    annotations_en:[null, "d4 — Controls center with the d-pawn, immediately protected by the Queen — very solid and hard to attack.", "d5 — Black takes center symmetrically, the most balanced response.", "c4 — The Queen's Gambit! Attacks d5. Not a real gambit — White always wins it back. Black must choose: accept (QGA), decline (QGD), or counter (Slav)."],
   },
 
   {id:'kid',name:"King's Indian Defense",eco:'E60–E99',cat:'Indian',dif:'advanced',
@@ -676,6 +781,8 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     pros_en:['Extremely strong counterattack when understood correctly','Creates unbalanced and unpredictable games','Kasparov won the World Championship multiple times with KID'],
     cons_en:['Dangerous if Black does not counterattack in time','Requires deep knowledge of specific variations','White has significant space advantage'],
     vars_en:[{n:'Classical (5.Nf3)',m:'5.Nf3 0-0 6.Be2 e5',d:'White develops stably without rushing. Leads to balanced two-wing battle.'},{n:'Samisch (5.f3)',m:'5.f3 0-0 6.Be3',d:'White is aggressive — f3 prepares g4-g5 kingside attack. Black must counterattack queenside fast.'},{n:'Four Pawns Attack (5.f4)',m:'5.f4 0-0 6.Nf3',d:'White builds a massive pawn wall. Very risky — if Black breaks through, the position collapses.'}],
+    annotations:[null, "d4 — Trắng bắt đầu xây trung tâm.", "Nf6 — Đen kiểm soát ô e4 bằng Mã thay vì tốt — triết lý Hypermodern: kiểm soát trung tâm bằng quân, không phải bằng tốt.", "c4 — Trắng mở rộng trung tâm thêm.", "g6 — Chuẩn bị fianchetto Tượng g7 — vũ khí chính của KID. Tượng g7 sẽ là quân nguy hiểm nhất khi trung tâm mở.", "Nc3 — Phát triển Mã, chuẩn bị đẩy e4 chiếm trung tâm hoàn toàn.", "Bg7 — Tượng lên g7 trên đường chéo dài h8-a1. Trông bị phong tỏa nhưng sau khi ...e5 phá trung tâm, Tượng này trở thành quân mạnh nhất bàn cờ.", "e4 — Trắng xây trung tâm khổng lồ e4+d4. Trông rất mạnh nhưng đây là bẫy Đen đã cố ý dụ — chuẩn bị phá bằng ...e5.", "d6 — Hỗ trợ ...e5 ở nước sau. Đen đã sẵn sàng phá vỡ trung tâm Trắng."],
+    annotations_en:[null, "d4 — White starts building the center.", "Nf6 — Black controls e4 with a piece not a pawn — Hypermodern philosophy: control the center with pieces, not pawns.", "c4 — White expands the center further.", "g6 — Prepares fianchetto of Bishop g7 — KID's main weapon. After ...e5 breaks open the center, this Bishop becomes the most dangerous piece on the board.", "Nc3 — Develops Knight, prepares to push e4 and complete the center.", "Bg7 — The Dragon Bishop on the a1-h8 long diagonal. Looks blocked but after ...e5 breaks the center, this Bishop wakes up and dominates.", "e4 — White builds a massive center e4+d4. Looks very strong but this is the trap Black deliberately invited — will be destroyed with ...e5.", "d6 — Supports ...e5 next move. Black is ready to break White's center."],
   },
 
   {id:'french',name:'French Defense',aka:'Phòng thủ Pháp',eco:'C00–C19',cat:'Semi-Open',dif:'intermediate',
@@ -699,6 +806,8 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     pros_en:['Solid d5+e6 pawn chain','Clear counterplay with ...c5','Difficult to attack directly in the opening'],
     cons_en:['Bad Bishop c8 is a burden throughout the game','Black is cramped for space initially'],
     vars_en:[{n:'Winawer (3...Bb4)',m:'3.Nc3 Bb4',d:'Sharpest. Black pins Nc3 immediately, creating complex doubled pawn structures.'},{n:'Classical (3...Nf6)',m:'3.Nc3 Nf6',d:'Natural development, continues to challenge e4. White often plays Advance or allows exd4.'},{n:'Advance (3.e5)',m:'3.e5 c5',d:'White locks the center. Black counterattacks with c5, targeting the d4 weakness.'}],
+    annotations:[null, "e4 — Trắng chiếm trung tâm.", "e6 — Bước chuẩn bị! Đen không chiếm trung tâm ngay mà chuẩn bị đẩy d5 ở nước sau. Nhược điểm: đóng đường Tượng c8 — tạo ra vấn đề Bad Bishop suốt ván.", "d4 — Trắng chiếm trung tâm tối đa với cặp e4+d4 hùng mạnh.", "d5 — Đây là mục tiêu của 1...e6! Đen thách thức tốt e4. Cặp e6+d5 tạo nêm vào trận địa Trắng và chuẩn bị phản công bằng ...c5."],
+    annotations_en:[null, "e4 — White takes center.", "e6 — The preparation move! Black doesn't take center immediately but prepares ...d5 next move. Downside: blocks the c8 Bishop diagonal — creating the Bad Bishop problem for the whole game.", "d4 — White takes maximum center with the powerful e4+d4 pair.", "d5 — This is the point of 1...e6! Challenges e4. The e6+d5 wedge pressures White's center and prepares queenside counterplay with ...c5."],
   },
 
   {id:'caro',name:'Caro-Kann Defense',eco:'B10–B19',cat:'Semi-Open',dif:'intermediate',
@@ -722,6 +831,8 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     pros_en:['Perfect pawn structure, no Bad Bishop','c8 Bishop freely develops to f5','Less theory than Sicilian but equally solid'],
     cons_en:['Slower than Sicilian, less sharp counterplay','Black often plays passively at the start'],
     vars_en:[{n:'Classical (4.Nxe4 Bf5)',m:'3.Nc3 dxe4 4.Nxe4 Bf5',d:'Most standard — Bishop comes out to f5 immediately. Structurally superior to French.'},{n:'Advance (3.e5)',m:'3.e5 Bf5',d:'White locks the center. Black frees the Bishop before the pawns close.'},{n:'Exchange (3.exd5)',m:'3.exd5 cxd5',d:'Symmetrical. Usually leads to IQP structure for Black — dynamic but with a weakness.'}],
+    annotations:[null, "e4 — Trắng chiếm trung tâm.", "c6 — Chuẩn bị đẩy d5. Khác French (1...e6), c6 KHÔNG đóng đường Tượng c8 — đây là ưu điểm then chốt: Đen sẽ không có Bad Bishop.", "d4 — Trắng chiếm trung tâm tối đa.", "d5 — Đen thách thức e4 với d5 được c6 hỗ trợ vững chắc. Sau ...dxe4 + ...Bf5, Đen có cấu trúc hoàn hảo — Tượng c8 ra ngoài tự do ngay."],
+    annotations_en:[null, "e4 — White takes center.", "c6 — Prepares d5. Unlike French (1...e6), c6 does NOT block the c8 Bishop diagonal — this is the key advantage: Black will never have a Bad Bishop.", "d4 — White takes maximum center.", "d5 — Black challenges e4 with d5 solidly supported by c6. After ...dxe4 + ...Bf5, Black has a perfect structure — Bishop c8 comes out freely right away."],
   },
 
   {id:'london',name:'London System',eco:'D02–D05',cat:'Closed',dif:'beginner',
@@ -747,6 +858,8 @@ Tốt c4 không thực sự bị mất vì Trắng luôn lấy lại được b�
     pros_en:['Almost no theory required','Solid, hard to attack quickly','Flexible — can transition to many different structures'],
     cons_en:['Less initiative and pressure vs strong opponents','Black can create counterplay if they know how','Slightly passive strategically'],
     vars_en:[{n:'Standard London',m:'4.e3 e6 5.Bd3 c5',d:'Standard structure. White plays Bd3, 0-0, Nbd2. Black often pushes c5 to break center.'},{n:'London vs KID',m:'3...g6 4.e3 Bg7 5.Be2',d:'When Black plays KID setup, White adjusts with Be2 instead of Bd3 to avoid the Bishop diagonal.'}],
+    annotations:[null, "d4 — Chiếm trung tâm bằng tốt d, được Hậu bảo vệ ngay — vững chắc.", "d5 — Đen chiếm trung tâm đối xứng.", "Nf3 — Phát triển Mã, kiểm soát ô e5. Nước đi hoàn toàn tự nhiên.", "Nf6 — Đen cũng phát triển Mã.", "Bf4 — Nét đặc trưng London! Trắng đi Bf4 TRƯỚC khi đẩy e3 để không đóng đường Tượng. Tượng f4 kiểm soát ô e5 và rất khó bị đuổi. Đây là hệ thống cố định, Trắng chơi tương tự bất kể Đen làm gì."],
+    annotations_en:[null, "d4 — Controls center with d-pawn, immediately Queen-protected — solid.", "d5 — Black takes center symmetrically.", "Nf3 — Develops Knight, controls e5. A natural and safe developing move.", "Nf6 — Black also develops Knight.", "Bf4 — The London move! White plays Bf4 BEFORE pushing e3 to not block the Bishop. Bf4 controls e5 and is very hard to chase away. This is a system — White plays the same setup regardless of what Black does."],
   },
 
 ];
@@ -809,11 +922,11 @@ function renderDetail(op){
     <div class="dbody">
       <div class="bsect">
         <div><div id="brd">${boardHTML(bStates[bIdx],hl)}</div></div>
-        <div class="mnav"><h4>${t('label.moves')}</h4><div class="mlist" id="mlist">${mh||'<div style="color:#5f7f9f;font-size:.8rem;padding:6px;">Chưa có nước đi</div>'}</div><div class="nbtns"><button class="nbtn" onclick="oBack()">⬅</button><button class="nbtn" onclick="oStart()">⏮</button><button class="nbtn" onclick="oFwd()">➡</button></div></div>
+        <div style="flex:1;min-width:200px;display:flex;flex-direction:column;gap:12px;"><div class="mnav"><h4>${t('label.moves')}</h4><div class="mlist" id="mlist">${mh||'<div style="color:#5f7f9f;font-size:.8rem;padding:6px;">Chưa có nước đi</div>'}</div><div class="nbtns"><button class="nbtn" onclick="oBack()">⬅</button><button class="nbtn" onclick="oStart()">⏮</button><button class="nbtn" onclick="oFwd()">➡</button></div></div>
       </div>
       <div class="sec"><h3>${LANG==='en'?'💭 Why Play This Opening?':'💭 Tại Sao Chơi Opening Này?'}</h3><p>${LANG==='en'&&op.why_en?op.why_en:op.why}</p></div>
       <div class="sec"><h3>${LANG==='en'?'🎯 Strategic Ideas':'🎯 Ý Tưởng Chiến Lược'}</h3><p>${LANG==='en'&&op.ideas_en?op.ideas_en:op.ideas}</p><div class="tip">${LANG==='en'&&op.tip_en?op.tip_en:op.tip}</div></div>
-      <div class="sec"><h3>${t('section.proscons')}</h3><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.strong')}</div><div class="pills">${(LANG==='en'&&op.pros_en?op.pros_en:op.pros).map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div><div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.weak')}</div><div class="pills">${(LANG==='en'&&op.cons_en?op.cons_en:op.cons).map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div></div></div>
+      <div class="sec"><h3>${t('section.proscons')}</h3><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.strong')}</div><div class="pills">${(LANG==='en'&&op.pros_en?op.pros_en:op.pros).map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div><div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${t('label.weak')}</div><div class="pills">${(LANG==='en'&&op.cons_en?op.cons_en:op.cons).map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div><div id="move-comment" style="display:none;background:#0a1830;border-left:3px solid #f5c842;padding:14px 16px;border-radius:0 8px 8px 0;font-size:.85rem;color:#c0d0e0;line-height:1.75;"></div></div></div>
       <div class="sec"><h3>${t('section.vars')}</h3>${(LANG==='en'&&op.vars_en?op.vars_en:op.vars).map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
     </div>`;
 }
@@ -824,6 +937,14 @@ function updBoard(){
   const bEl=document.getElementById('brd');if(bEl)bEl.innerHTML=boardHTML(bStates[bIdx],hl);
   const items=document.querySelectorAll('#mlist .mi');items.forEach(el=>el.classList.remove('cur'));
   let mi=0;for(let i=0;i<curOp.moves.length;i++){const m=curOp.moves[i];const wi=mi+1,bi=m.b?mi+2:-1;if(bIdx===wi||bIdx===bi){if(items[i])items[i].classList.add('cur');}mi+=(m.w?1:0)+(m.b?1:0);}
+  // Update move comment
+  const cEl=document.getElementById('move-comment');
+  if(cEl){
+    const ann=LANG==='en'&&curOp.annotations_en?curOp.annotations_en:curOp.annotations;
+    const txt=ann&&bIdx>0?ann[bIdx]:null;
+    if(txt){cEl.innerHTML=txt;cEl.style.display='block';}
+    else{cEl.style.display='none';}
+  }
 }
 function gotoM(pi){let mi=0;for(let i=0;i<=pi;i++){const m=curOp.moves[i];if(m.w)mi++;if(m.b)mi++;}bIdx=Math.min(mi,bStates.length-1);updBoard();}
 function oBack(){if(bIdx>0){bIdx--;updBoard();}}
@@ -1040,6 +1161,9 @@ const blackOpenings = [
     cons:['Rất phức tạp, cần học nhiều','Sai lầm nhỏ dễ thua nhanh'],
     vars:[{n:'Najdorf (5...a6)',m:'5...a6',d:'Phổ biến nhất. Ngăn Nb5, chuẩn bị ...b5.'},{n:'Dragon (5...g6)',m:'5...g6 6.Be3 Bg7',d:'Fianchetto Tượng g7, cực kỳ sắc bén.'},{n:'Scheveningen (5...e6)',m:'5...e6',d:'Kiên cố hơn, cấu trúc vững chắc.'}],
     tip:'💡 Sicilian dạy bạn rằng không cần chơi đối xứng — hãy tạo ra kế hoạch riêng của mình.',
+    whyHTML_en:'Instead of mirroring 1...e5, Black uses c5 to fight for d4 from the flank, creating a completely asymmetric game — White attacks the kingside, Black counterattacks the queenside.<br><br><strong>1...c5</strong> — Controls d4 without occupying the center directly.<br><strong>2.Nf3 d6</strong> — Prepares ...Nf6 and ...e5.<br><strong>3.d4 cxd4</strong> — Opens the c-file for the Rook.<br><strong>4.Nxd4 Nf6</strong> — Develops and attacks e4.<br><strong>5...a6 (Najdorf)</strong> — Stops Nb5+Bb5, prepares ...b5 queenside expansion.',    ideasHTML_en:'<strong>Black\'s plan:</strong> Rook to c8, push ...b5-b4 to pressure Nc3, attack the queenside. While White attacks the kingside, Black breaks through queenside.<br><br><strong>White\'s plan:</strong> f4-f5 or g4-g5 attacking Black\'s King. Whoever breaks through first wins — this is why Sicilian creates the sharpest, most decisive games.',    tip_new_en:'Sicilian gives Black the highest win rate vs 1.e4 — but requires serious study. Mistakes get punished fast.',    pros_en:['Strongest counterplay for Black','Highest win rate vs 1.e4','Used by Kasparov, Fischer, Carlsen'],
+    cons_en:['Very complex, requires heavy theory','Small mistakes lead to quick losses'],
+    vars_en:[{n:'Najdorf (5...a6)',m:'5...a6',d:'Most popular. Stops Nb5, prepares ...b5.'},{n:'Dragon (5...g6)',m:'5...g6 6.Be3 Bg7',d:'Fianchetto Bishop g7, extremely sharp.'},{n:'Scheveningen (5...e6)',m:'5...e6',d:'Solid center with d6+e6, more stable.'}],
     tip_en:`💡 London teaches that having a clear plan and executing it patiently can be stronger than deep theoretical knowledge.`,
     ideas_en:`<strong>White's plan:</strong> Build the "pyramid" — d4+e3+c3+Bd3+0-0. Then attack slowly or wait for Black's mistakes.<br><br><strong>Why London works at all levels:</strong> Beginners use it because it's simple. Magnus Carlsen uses it as a psychological weapon — forcing opponents to create their own plan.`,
     why_en:`"Set it and forget it" — White plays d4, Nf3, Bf4 regardless of what Black does. No need to memorize deep theory. Bishop f4 on a strong square, hard to attack.<br><br><strong>3.Bf4</strong> — The London move. Controls e5, hard to chase away.`,
@@ -1066,6 +1190,9 @@ const blackOpenings = [
     cons:['Ít phản công sắc bén hơn Sicilian','Đen thường chơi thụ động ban đầu'],
     vars:[{n:'Classical (4...Bf5)',m:'4.Nxe4 Bf5',d:'Chuẩn nhất — Tượng ra ngay.'},{n:'Advance (3.e5)',m:'3.e5 Bf5',d:'Trắng khóa trung tâm, Đen giải phóng Tượng sớm.'},{n:'Exchange (3.exd5)',m:'3.exd5 cxd5',d:'Đối xứng, dẫn đến cấu trúc IQP.'}],
     tip:'💡 Caro-Kann là lựa chọn hoàn hảo nếu muốn solid mà không cần học lý thuyết Sicilian dày đặc.',
+    whyHTML_en:'Solid vs 1.e4 — no Bad Bishop like French.<br><br><strong>1...c6</strong> — Prepares d5, keeps the c8 Bishop diagonal open — unlike French\'s 1...e6.<br><strong>2.d4 d5</strong> — Challenges e4 directly. d5 is supported by c6.<br><strong>3.Nc3 dxe4 4.Nxe4 Bf5</strong> — The key sequence: Bishop immediately comes out to f5 — impossible in French. Black has perfect pawn structure with no weaknesses.',    ideasHTML_en:'<strong>Black\'s plan:</strong> After Bf5, develop Nf6, e6, castle short. Then counterattack with ...c5 or ...e5.<br><br><strong>vs French:</strong> In French, Bc8 is stuck all game. In Caro-Kann, it\'s out by move 4 — a permanent structural advantage.',    tip_new_en:'Caro-Kann is ideal if you want solid play without learning all the complex Sicilian theory.',    pros_en:['No Bad Bishop','Perfect pawn structure','Less theory than Sicilian'],
+    cons_en:['Less sharp counterplay than Sicilian','Often passive early game'],
+    vars_en:[{n:'Classical (4...Bf5)',m:'4.Nxe4 Bf5',d:'Most standard — Bishop out to f5 immediately.'},{n:'Advance (3.e5)',m:'3.e5 Bf5',d:'White locks center, Black frees Bishop early.'},{n:'Exchange (3.exd5)',m:'3.exd5 cxd5',d:'Symmetrical, leads to IQP structure.'}],
   },
   {
     id:'french-b', name:'French Defense', eco:'C00-C19', cat:'vs 1.e4', dif:'intermediate',
@@ -1076,6 +1203,9 @@ const blackOpenings = [
     cons:['Bad Bishop c8 suốt ván','Bị chật hẹp không gian ban đầu'],
     vars:[{n:'Winawer (3...Bb4)',m:'3.Nc3 Bb4',d:'Sắc bén nhất — ghim Mã c3 ngay.'},{n:'Classical (3...Nf6)',m:'3.Nc3 Nf6',d:'Phát triển tự nhiên.'},{n:'Advance (3.e5)',m:'3.e5 c5',d:'Trắng đẩy tốt, Đen phản công c5.'}],
     tip:'💡 Trong French, hãy luôn tìm cách giải phóng Bad Bishop — đó là chìa khóa để chuyển từ phòng thủ sang tấn công.',
+    whyHTML_en:'Black builds a fortress with e6+d5, accepting cramped space for solid structure.<br><br><strong>1...e6</strong> — Doesn\'t take center immediately, prepares ...d5.<br><strong>2...d5</strong> — Challenges e4. The e6+d5 wedge pressures White\'s center.<br><strong>3...Nf6</strong> — Develops and challenges e4.<br><br><strong>Key weakness:</strong> Bishop c8 is blocked by e6 — the \'Bad Bishop\'. Black must free it with ...b6 ...Ba6.',    ideasHTML_en:'<strong>Black\'s plan:</strong> After castling, push ...c5 to attack d4. If White plays dxc5, Black recaptures and frees the Bad Bishop.<br><br><strong>Long-term goal:</strong> Free the Bad Bishop, create queenside counterplay, break White\'s center with ...c5.',    tip_new_en:'In French, always look for ways to free the Bad Bishop — that\'s the key to transitioning from defense to attack.',    pros_en:['Solid pawn chain d5+e6','Clear counterplay with ...c5','Hard to attack directly'],
+    cons_en:['Bad Bishop c8 throughout the game','Cramped for space initially'],
+    vars_en:[{n:'Winawer (3...Bb4)',m:'3.Nc3 Bb4',d:'Sharpest — pins Nc3 immediately.'},{n:'Classical (3...Nf6)',m:'3.Nc3 Nf6',d:'Natural development, challenges e4.'},{n:'Advance (3.e5)',m:'3.e5 c5',d:'White locks center, Black counterattacks c5.'}],
   },
   {
     id:'kid-b', name:"King's Indian Defense", eco:'E60-E99', cat:'vs 1.d4', dif:'advanced',
@@ -1086,6 +1216,9 @@ const blackOpenings = [
     cons:['Nguy hiểm nếu không phản công kịp','Cần học nhiều variation'],
     vars:[{n:'Classical (6.Be2 e5)',m:'6.Be2 0-0 7.0-0 e5',d:'Trắng phát triển ổn định.'},{n:'Samisch (5.f3)',m:'5.f3 0-0 6.Be3',d:'Trắng hung hãn, Đen phải phản công ngay.'},{n:'Four Pawns (5.f4)',m:'5.f4 0-0',d:'Trắng xây tường tốt khổng lồ.'}],
     tip:'💡 KID dạy bài học: không gian không phải tất cả — initiative và counterplay đúng lúc còn mạnh hơn.',
+    whyHTML_en:'Hypermodern — Black voluntarily gives White the e4+d4 center, then destroys it with ...e5.<br><br><strong>1...Nf6</strong> — Controls e4 with a piece, not a pawn.<br><strong>2...g6</strong> — Prepares fianchetto of Bishop g7.<br><strong>3...Bg7</strong> — The \'Dragon Bishop\' on the long a1-h8 diagonal — the main weapon.<br><strong>4...d6</strong> — Supports ...e5 later.<br><strong>5...0-0 6...e5!</strong> — The critical break — directly attacks d4.',    ideasHTML_en:'<strong>Black\'s plan:</strong> After ...e5, if d5 then attack kingside with ...f5-f4. If dxe5, Bishop g7 wakes up and fires along the long diagonal.<br><br>Kasparov used KID to win the World Championship multiple times. White attacks queenside, Black attacks kingside — whoever breaks through first wins.',    tip_new_en:'KID teaches the most important lesson: space is not everything — initiative and counterplay at the right moment are stronger.',    pros_en:['Extremely strong counterattack','Kasparov used it to win World Championships','Opponent needs heavy theory knowledge'],
+    cons_en:['Dangerous if Black does not counterattack in time','Requires deep study of variations'],
+    vars_en:[{n:'Classical (6.Be2 e5)',m:'6.Be2 0-0 7.0-0 e5',d:'White develops stably.'},{n:'Samisch (5.f3)',m:'5.f3 0-0 6.Be3',d:'White aggressive, Black must counter fast.'},{n:'Four Pawns (5.f4)',m:'5.f4 0-0',d:'White builds massive pawn wall.'}],
   },
   {
     id:'nimzo-b', name:'Nimzo-Indian Defense', eco:'E20-E59', cat:'vs 1.d4', dif:'intermediate',
@@ -1096,6 +1229,9 @@ const blackOpenings = [
     cons:['Mất Tượng đôi (đổi Tượng lấy Mã)','Trắng có compensate bằng Tượng đôi'],
     vars:[{n:'Classical (4.e3)',m:'4.e3 0-0 5.Bd3',d:'Trắng phát triển ổn định.'},{n:'Samisch (4.a3)',m:'4.a3 Bxc3 5.bxc3',d:'Trắng ép Đen đổi Tượng ngay, chấp nhận tốt đôi.'},{n:'Rubinstein (4.e3 b6)',m:'4.e3 b6',d:'Đen chuẩn bị fianchetto Tượng b7.'}],
     tip:'💡 Nimzo dạy bạn rằng giá trị quân không phải tất cả — cấu trúc tốt và điểm yếu lâu dài quan trọng hơn.',
+    whyHTML_en:'Black pins Nc3 with Bb4 immediately — preventing White from freely playing e4.<br><br><strong>1...Nf6</strong> — Controls e4.<br><strong>2...e6</strong> — Prepares d5, opens f8 Bishop diagonal.<br><strong>3...Bb4</strong> — The Nimzo move! Pins Nc3 — if White pushes e4, Black plays Bxc3 creating doubled pawns. White gets the Bishop pair but bad pawn structure.',    ideasHTML_en:'<strong>Black\'s plan:</strong> Exchange Bishop for Knight (Bxc3) to ruin White\'s structure. White has Bishop pair but doubled c-pawns are a long-term endgame weakness.<br><br>After the exchange: develop naturally with d5, 0-0, c5, exploit the c4 weakness.',    tip_new_en:'Nimzo teaches that material value is not everything — pawn structure and long-term weaknesses matter more.',    pros_en:['Ruins White pawn structure immediately','Used by Kasparov and Karpov','Less theory than KID'],
+    cons_en:['Give up the Bishop pair','White compensates with active pieces'],
+    vars_en:[{n:'Classical (4.e3)',m:'4.e3 0-0 5.Bd3',d:'White develops stably.'},{n:'Samisch (4.a3)',m:'4.a3 Bxc3 5.bxc3',d:'White forces the exchange immediately.'},{n:'Rubinstein (4.e3 b6)',m:'4.e3 b6',d:'Black prepares fianchetto of Bb7.'}],
   },
   {
     id:'slav-b', name:'Slav Defense', eco:'D10-D19', cat:'vs 1.d4', dif:'beginner',
@@ -1106,6 +1242,9 @@ const blackOpenings = [
     cons:['Ít sắc bén hơn KID','Thường dẫn đến game cân bằng'],
     vars:[{n:'Semi-Slav (4...dxc4)',m:'4...dxc4 5.a4 Bf5',d:'Đen giữ tốt, Tượng ra f5.'},{n:'Chebanenko (4...a6)',m:'4...a6',d:'Linh hoạt, chuẩn bị ...dxc4+...b5.'},{n:'Classical (4...e6)',m:'4...e6 5.e3',d:'Kiên cố, ít phức tạp.'}],
     tip:'💡 Slav là lựa chọn lý tưởng vs 1.d4 nếu mày muốn solid mà không cần học lý thuyết KID phức tạp.',
+    whyHTML_en:'Most solid vs 1.d4 — supports d5 with c6 without blocking the c8 Bishop.<br><br><strong>1...d5</strong> — Takes center symmetrically.<br><strong>2...c6</strong> — Supports d5 solidly. Unlike QGD (2...e6), c6 doesn\'t block the c8-h3 diagonal — this is the key advantage.<br><strong>3...Nf6</strong> — Natural Knight development.<br><strong>4...dxc4</strong> — Black captures and can hold with ...b5-b4.',    ideasHTML_en:'<strong>Black\'s plan:</strong> After ...dxc4, push ...b5 to protect the pawn. Bc8 is free to go to f5 or g4.<br><br><strong>vs QGD:</strong> In QGD (2...e6), Bc8 is blocked by the e6 pawn. In Slav, that Bishop is free from the start — never a Bad Bishop.',    tip_new_en:'Slav is ideal vs 1.d4 if you want solid play without learning complex KID theory.',    pros_en:['Perfect pawn structure','c8 Bishop always free','Very popular at top level','Good for beginners'],
+    cons_en:['Less sharp than KID','Often leads to balanced games'],
+    vars_en:[{n:'Semi-Slav (4...dxc4)',m:'4...dxc4 5.a4 Bf5',d:'Black holds the pawn, Bishop to f5.'},{n:'Chebanenko (4...a6)',m:'4...a6',d:'Flexible, prepares ...dxc4+...b5.'},{n:'Classical (4...e6)',m:'4...e6 5.e3',d:'Solid, less complex.'}],
   },
   {
     id:'grunfeld-b', name:'Grünfeld Defense', eco:'D70-D99', cat:'vs 1.d4', dif:'advanced',
@@ -1116,6 +1255,9 @@ const blackOpenings = [
     cons:['Cực kỳ phức tạp về lý thuyết','Không hợp với người mới','Trắng có trung tâm khổng lồ nếu Đen chơi sai'],
     vars:[{n:'Exchange (4.cxd5)',m:'4.cxd5 Nxd5 5.e4',d:'Trắng xây trung tâm khổng lồ, Đen phá vỡ ngay.'},{n:'Russian System',m:'7.Bc4',d:'Trắng phát triển Tượng hung hãn.'},{n:'Classical (7.Be3)',m:'7.Be3',d:'Trắng phát triển ổn định hơn.'}],
     tip:'💡 Grünfeld dạy triết lý cực đoan: cho đối thủ trung tâm to nhất có thể, rồi phá nó hoàn toàn.',
+    whyHTML_en:'Ultra-hypermodern — Black concentrates all forces to attack the d4 pawn.<br><br><strong>1...Nf6 2...g6</strong> — Prepares fianchetto of Bishop g7.<br><strong>3...d5</strong> — The defining move! Black pushes d5 when White already has e4+d4. White must capture.<br><strong>4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3</strong> — White has a huge center but c3 is weak.<br><strong>6...Bg7</strong> — Bishop g7 fires directly at d4 — all Black\'s pieces target this pawn.',    ideasHTML_en:'<strong>Black\'s plan:</strong> All forces attack d4 — Bishop g7, Queen (Qb6 or Qa5), Knight (Nc6), even pawns (c5). If d4 falls, White\'s position collapses completely.<br><br>Magnus Carlsen and Kramnik used the Grünfeld to win World Championships — proving the power of systematically destroying the center.',    tip_new_en:'Grünfeld teaches the extreme philosophy: give opponent the biggest center possible, then destroy it completely.',    pros_en:['Most systematic center destruction','Magnus Carlsen favorite','Extremely strong counterplay'],
+    cons_en:['Very complex theory','Not suitable for beginners','White has huge center if Black goes wrong'],
+    vars_en:[{n:'Exchange (4.cxd5)',m:'4.cxd5 Nxd5 5.e4',d:'White builds massive center, Black destroys.'},{n:'Russian System',m:'7.Bc4',d:'White develops Bishop aggressively.'},{n:'Classical (7.Be3)',m:'7.Be3',d:'White develops more stably.'}],
   },
 ];
 
@@ -1152,17 +1294,17 @@ function renderBlackDetail(op) {
         <div><div id="bbrd">${boardHTML(bBlackStates[bBlackIdx],hl)}</div></div>
         <div class="mnav"><h4>${LANG==='en'?'🎯 Moves':'🎯 Các Nước Đi'}</h4><div class="mlist" id="bmlist">${mh}</div><div class="nbtns"><button class="nbtn" onclick="bBack()">⬅</button><button class="nbtn" onclick="bStart()">⏮</button><button class="nbtn" onclick="bFwd()">➡</button></div></div>
       </div>
-      <div class="sec"><h3>${LANG==='en'?'💭 Why Does Black Play This?':'💭 Tại Sao Đen Chơi Thế Này?'}</h3><p>${op.whyHTML||op.why||''}</p></div>
-      <div class="sec"><h3>${LANG==='en'?'🎯 Counter-Attack Plan':'🎯 Kế Hoạch Phản Công'}</h3><p>${op.ideasHTML||op.ideas||''}</p></div>
+      <div class="sec"><h3>${LANG==='en'?'💭 Why Does Black Play This?':'💭 Tại Sao Đen Chơi Thế Này?'}</h3><p>${LANG==='en'&&op.whyHTML_en?op.whyHTML_en:(op.whyHTML||op.why||'')}</p></div>
+      <div class="sec"><h3>${LANG==='en'?'🎯 Counter-Attack Plan':'🎯 Kế Hoạch Phản Công'}</h3><p>${LANG==='en'&&op.ideasHTML_en?op.ideasHTML_en:(op.ideasHTML||op.ideas||'')}</p></div>
       <div class="sec">
         <h3>${LANG==='en'?'⚖️ Pros / Cons':'⚖️ Điểm Mạnh / Yếu'}</h3>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'✅ PROS':'✅ MẠNH'}</div><div class="pills">${op.pros.map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div>
-          <div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'❌ CONS':'❌ YẾU'}</div><div class="pills">${op.cons.map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div>
+          <div style="flex:1;min-width:160px;"><div style="color:#4caf50;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'✅ PROS':'✅ MẠNH'}</div><div class="pills">${(LANG==='en'&&op.pros_en?op.pros_en:op.pros).map(p=>`<span class="pill ppro">${p}</span>`).join('')}</div></div>
+          <div style="flex:1;min-width:160px;"><div style="color:#f44336;font-size:.8rem;font-weight:700;margin-bottom:6px;">${LANG==='en'?'❌ CONS':'❌ YẾU'}</div><div class="pills">${(LANG==='en'&&op.cons_en?op.cons_en:op.cons).map(c=>`<span class="pill pcon">${c}</span>`).join('')}</div></div>
         </div>
       </div>
-      <div class="sec"><h3>${LANG==='en'?'🌿 Variations':'🌿 Biến Thể'}</h3>${op.vars.map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
-      <div class="tip">${op.tip}</div>
+      <div class="sec"><h3>${LANG==='en'?'🌿 Variations':'🌿 Biến Thể'}</h3>${(LANG==='en'&&op.vars_en?op.vars_en:op.vars).map(v=>`<div class="vari"><div class="vname">${v.n}</div><div class="vmov">${v.m}</div><div class="vdesc">${v.d}</div></div>`).join('')}</div>
+      <div class="tip">${LANG==='en'&&op.tip_new_en?op.tip_new_en:op.tip}</div>
     </div>`;
 }
 
@@ -1196,6 +1338,15 @@ function selBlack(id) {
   renderBlackDetail(curBlack);
 }
 
+
+function renderMidgame(){
+  const L=T[LANG]||{};
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');const v=t(k);if(typeof v==='string')el.innerHTML=v;});
+  document.querySelectorAll('[data-mid-title]').forEach(el=>{const k=el.getAttribute('data-mid-title');const v=L[k];if(typeof v==='string')el.textContent=v;});
+  document.querySelectorAll('[data-mid-why]').forEach(el=>{const k=el.getAttribute('data-mid-why');const v=L[k+'.why'];if(typeof v==='string')el.textContent=v;});
+  document.querySelectorAll('[data-mid-tags]').forEach(el=>{const k=el.getAttribute('data-mid-tags');const tags=L[k+'.tags'];if(Array.isArray(tags))el.innerHTML=tags.map(tag=>`<span class="acc-tag">${tag}</span>`).join('');});
+}
+
 // ==== TABS ====
 function switchTab(evt,tab){
   document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
@@ -1207,6 +1358,7 @@ function switchTab(evt,tab){
   if(tab==='black'){renderBlackCards();renderBlackDetail(curBlack);}
   if(tab==='history')loadHistory();
   if(tab==='basics')renderBasics();
+  if(tab==='midgame')renderMidgame();
 }
 
 // ==== INIT ====

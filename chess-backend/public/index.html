@@ -118,6 +118,7 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
   <button class="tab-btn" onclick="switchTab(event,'openings')">♟️ Openings (White)</button>
   <button class="tab-btn" onclick="switchTab(event,'black')">⚫ Counter-Attacks (Black)</button>
   <button class="tab-btn" onclick="switchTab(event,'practice')" data-i18n="tab.practice">⚔️ Luyện Tập</button>
+  <button class="tab-btn" onclick="switchTab(event,'midgame')" data-i18n="tab.midgame">🗡️ Trung Cuộc</button>
   <button class="tab-btn" onclick="switchTab(event,'history')" data-i18n="tab.history">📜 Lịch Sử</button>
 </div>
 
@@ -264,6 +265,27 @@ header p{color:#a0b4c8;margin-top:6px;font-size:.9rem;}
   </div>
 </div>
 
+
+<!-- MIDGAME -->
+<div id="tab-midgame" class="tab-content">
+  <div style="max-width:1200px;margin:0 auto;padding:30px 20px;">
+    <div class="sec"><h3 data-i18n="midgame.intro.title">⚔️ Làm Gì Ở Trung Cuộc?</h3><p data-i18n="midgame.intro.text">Khai cuộc kết thúc khi tất cả quân đã phát triển và Vua nhập thành. Trung cuộc là giai đoạn chiến đấu thực sự — kết hợp <strong style="color:#f5c842">chiến thuật sắc bén</strong> và <strong style="color:#f5c842">chiến lược dài hạn</strong> để giành lợi thế.</p></div>
+    <h3 style="color:#e94560;font-size:1.05rem;margin:28px 0 10px;padding-bottom:8px;border-bottom:2px solid #e94560;" data-i18n="midgame.tactic.title">🗡️ Chiến Thuật Cờ Vua</h3>
+    <p style="color:#7090a0;font-size:.83rem;margin-bottom:14px;" data-i18n="midgame.tactic.hint">👆 Bấm vào từng mục để xem chi tiết</p>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">1</span><span class="acc-title" data-mid-title="m1">Nĩa (Fork) — Tấn Công 2 Quân Cùng Lúc</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m1">Một nước đi tạo ra 2 mối đe dọa đồng thời — đối thủ chỉ xử lý được 1. Mã là quân nĩa nguy hiểm nhất vì di chuyển hình chữ L rất khó đoán. Nĩa Mã vào Vua + Xe = chắc chắn thắng Xe. Nĩa tốt vào 2 quân = thắng material. Luôn tìm cơ hội nĩa trước mỗi nước — đặc biệt khi Mã ở trung tâm.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m1"><span class="acc-tag">Thắng material chắc chắn</span><span class="acc-tag">Tạo 2 mối đe dọa từ 1 nước</span><span class="acc-tag">Đối thủ phải chọn cái nào để giữ</span><span class="acc-tag">Mã đặc biệt nguy hiểm khi nĩa</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">2</span><span class="acc-title" data-mid-title="m2">Ghim (Pin) — Khóa Quân Đối Thủ Tại Chỗ</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m2">Ghim tuyệt đối vào Vua: quân bị ghim không thể di chuyển — vi phạm luật. Ghim tương đối vào Hậu hoặc Xe: quân không dám di chuyển vì sẽ mất quân giá trị cao hơn. Mỗi quân bị ghim bị giảm 1 quân tấn công. Chiến thuật tiếp theo: tấn công quân bị ghim bằng thêm quân khác để buộc trao đổi bất lợi.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m2"><span class="acc-tag">Giảm khả năng tấn công đối thủ</span><span class="acc-tag">Tấn công quân bị ghim bằng nhiều quân</span><span class="acc-tag">Tạo điểm yếu lâu dài trong trận địa</span><span class="acc-tag">Tượng và Xe là quân ghim hiệu quả nhất</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">3</span><span class="acc-title" data-mid-title="m3">Xiên (Skewer) — Đòn Ngược Của Ghim</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m3">Khác với Ghim, Skewer buộc quân giá trị cao phải di chuyển để lộ quân giá trị thấp phía sau. Ví dụ: chiếu Vua bằng Tượng, Vua phải tránh, Tượng ăn Xe phía sau. Cực kỳ hiệu quả khi kết hợp với chiếu vì đối thủ không có lựa chọn — phải thoát chiếu trước.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m3"><span class="acc-tag">Thắng material chắc chắn</span><span class="acc-tag">Buộc Vua di chuyển khỏi ô an toàn</span><span class="acc-tag">Kết hợp với chiếu để tăng hiệu quả</span><span class="acc-tag">Tượng và Xe trên cột mở rất nguy hiểm</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">4</span><span class="acc-title" data-mid-title="m4">Đòn Lộ (Discovered Attack) — Vũ Khí Bí Mật</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m4">Di chuyển quân A để quân B phía sau tấn công đối thủ. Tạo 2 mối đe dọa: xử lý quân A đang di chuyển VÀ quân B vừa lộ ra. Discovered Check còn mạnh hơn — quân A có thể đi bất kỳ đâu vì đối thủ phải thoát chiếu trước. Đây là đòn khó phòng thủ nhất trong cờ vua.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m4"><span class="acc-tag">Tạo 2 mối đe dọa đồng thời</span><span class="acc-tag">Quân di chuyển có thể ăn thêm material</span><span class="acc-tag">Cực khó phòng thủ hoàn toàn</span><span class="acc-tag">Discovered Check = gần như nước đi tự do</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">5</span><span class="acc-title" data-mid-title="m5">Điểm Yếu Hàng Cuối (Back Rank)</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m5">Sau nhập thành, Vua bị nhốt sau hàng tốt h-g-f. Nếu không có ô thoát, Xe đối thủ chiếu hết ở hàng 1 hoặc hàng 8. Đây là lý do đẩy h3 (Trắng) hoặc h6 (Đen) là nước phòng thủ quan trọng — tạo ô thoát cho Vua. Luôn kiểm tra hàng cuối của cả hai bên.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m5"><span class="acc-tag">Tránh chiếu hết bất ngờ</span><span class="acc-tag">Vua có ô thoát an toàn</span><span class="acc-tag">Nhận biết cơ hội tấn công hàng cuối</span><span class="acc-tag">h3/h6 là nước phòng thủ thiết yếu</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#e94560;">6</span><span class="acc-title" data-mid-title="m6">Nước Đệm (Zwischenzug) — Đừng Vội Đổi Quân</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m6">Thay vì đổi quân theo thứ tự dự kiến, chèn 1 nước đi có giá trị cao hơn trước. Ví dụ: thay vì bắt lại ngay, chiếu Vua trước để giành thêm lợi thế. Đây là kỹ thuật phân biệt người chơi trung bình với người giỏi — luôn hỏi có nước nào tốt hơn trước khi bắt lại không.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m6"><span class="acc-tag">Thắng thêm material bất ngờ</span><span class="acc-tag">Cải thiện vị trí trước khi đổi quân</span><span class="acc-tag">Đối thủ bị bất ngờ hoàn toàn</span><span class="acc-tag">Phân biệt người chơi giỏi và trung bình</span></div></div></div></div>
+    <h3 style="color:#4caf50;font-size:1.05rem;margin:32px 0 10px;padding-bottom:8px;border-bottom:2px solid #4caf50;" data-i18n="midgame.strategy.title">🏛️ Chiến Lược Trung Cuộc</h3>
+    <p style="color:#7090a0;font-size:.83rem;margin-bottom:14px;" data-i18n="midgame.strategy.hint">👆 Chiến thuật thắng quân — Chiến lược thắng ván cờ</p>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#4caf50;">7</span><span class="acc-title" data-mid-title="m7">Hoạt Động Quân — Quân Tốt = Quân Hoạt Động</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m7">Quân không hoạt động là quân chết — không tấn công, không phòng thủ hiệu quả. Trước khi tấn công, hỏi: quân nào của tao đang kém nhất? rồi cải thiện nó. Tượng xấu bị chặn bởi tốt của mình = gần như vô dụng. Mã ở góc bàn = nửa giá trị. Nguyên tắc vàng: mỗi nước đi phải cải thiện hoạt động ít nhất 1 quân.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m7"><span class="acc-tag">Mọi quân đóng góp vào tấn công</span><span class="acc-tag">Tấn công mạnh hơn khi quân hợp lực</span><span class="acc-tag">Không có quân chết lãng phí</span><span class="acc-tag">Luôn cải thiện quân kém nhất trước</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#4caf50;">8</span><span class="acc-title" data-mid-title="m8">Cấu Trúc Tốt — Xương Sống Của Vị Trí</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m8">Tốt cô lập: không có tốt bên cạnh bảo vệ, phải dùng quân để che — điểm yếu lâu dài. Tốt đôi: 2 tốt cùng cột = 2 điểm yếu. Tốt thông: không có tốt đối thủ chặn đường phong Hậu = lợi thế quyết định ở endgame. Hiểu cấu trúc tốt = biết chính xác kế hoạch cần làm. Tạo điểm yếu tốt cho đối thủ là mục tiêu chiến lược quan trọng nhất.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m8"><span class="acc-tag">Nhận biết và khai thác điểm yếu tốt đối thủ</span><span class="acc-tag">Biết khi nào nên tạo passed pawn</span><span class="acc-tag">Tránh tạo điểm yếu tốt cho chính mình</span><span class="acc-tag">Lập kế hoạch tấn công và phòng thủ đúng</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#4caf50;">9</span><span class="acc-title" data-mid-title="m9">Ô Căn Cứ (Outpost) — Pháo Đài Giữa Bàn Cờ</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m9">Outpost là ô không thể bị tốt đối thủ tấn công, nằm sâu trong trận địa địch. Mã ở outpost trung tâm như d5, e5, c5 = quân cực kỳ mạnh, kiểm soát nhiều ô quan trọng và rất khó bị đuổi. Cách tạo outpost: trao đổi tốt để loại bỏ tốt đối thủ có thể đánh vào ô đó. Mã ở outpost thường mạnh hơn Tượng trong vị trí đóng.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m9"><span class="acc-tag">Mã mạnh hơn Tượng ở vị trí đóng</span><span class="acc-tag">Kiểm soát ô quan trọng lâu dài</span><span class="acc-tag">Hạn chế tầm hoạt động quân đối thủ</span><span class="acc-tag">Rất khó bị đối thủ phá vỡ</span></div></div></div></div>
+    <div class="acc"><div class="acc-head" onclick="toggleAcc(this)"><span class="acc-num" style="background:#4caf50;">10</span><span class="acc-title" data-mid-title="m10">Cột Mở Cho Xe — Kích Hoạt Vũ Khí Hạng Nặng</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-why"><div class="acc-why-label" data-i18n="acc.why.label">🤔 Tại sao?</div><div class="acc-why-text" data-mid-why="m10">Xe chỉ thực sự mạnh trên cột mở không có tốt chặn. Xe trên cột mở = kiểm soát hoàn toàn cột đó. Hai Xe trên cùng cột mở = sức mạnh gấp đôi. Xe trên hàng thứ 7 (Trắng) hoặc hàng thứ 2 (Đen) = cực nguy hiểm, tấn công tốt và nhốt Vua. Đôi Xe vào hàng 7 = gần như chiếu hết.</div></div><div class="acc-ben"><div class="acc-ben-label" data-i18n="acc.ben.label">✅ Lợi ích khi làm đúng</div><div class="acc-tags" data-mid-tags="m10"><span class="acc-tag">Xe phát huy tối đa sức mạnh</span><span class="acc-tag">Kiểm soát cột và hàng quan trọng</span><span class="acc-tag">Áp lực lên tốt và Vua đối thủ</span><span class="acc-tag">Đôi Xe hàng 7 = gần như thắng</span></div></div></div></div>
+  </div>
+</div>
 <!-- HISTORY -->
 <div id="tab-history" class="tab-content">
   <div style="max-width:900px;margin:0 auto;padding:28px 20px;">
@@ -370,6 +392,16 @@ const T = {
     'label.strong': '✅ MẠNH', 'label.weak': '❌ YẾU',
     'label.moves': '🎯 Các Nước Đi',
     'diff.beginner': 'Cơ bản', 'diff.intermediate': 'Trung cấp', 'diff.advanced': 'Nâng cao',
+    'tab.midgame': '🗡️ Trung Cuộc',
+    'midgame.intro.title': '⚔️ Làm Gì Ở Trung Cuộc?',
+    'midgame.intro.text': 'Khai cuộc kết thúc khi tất cả quân đã phát triển và Vua nhập thành. Trung cuộc là giai đoạn chiến đấu thực sự.',
+    'midgame.tactic.title': '🗡️ Chiến Thuật Cờ Vua',
+    'midgame.tactic.hint': '👆 Bấm vào từng mục để xem chi tiết',
+    'midgame.strategy.title': '🏛️ Chiến Lược Trung Cuộc',
+    'midgame.strategy.hint': '👆 Chiến thuật thắng quân — Chiến lược thắng ván cờ',
+    'm1': 'Nĩa (Fork)','m2': 'Ghim (Pin)','m3': 'Xiên (Skewer)','m4': 'Đòn Lộ (Discovered Attack)',
+    'm5': 'Điểm Yếu Hàng Cuối (Back Rank)','m6': 'Nước Đệm (Zwischenzug)',
+    'm7': 'Hoạt Động Quân','m8': 'Cấu Trúc Tốt','m9': 'Ô Căn Cứ (Outpost)','m10': 'Cột Mở Cho Xe',
     'history.title': '📜 Lịch Sử Ván Cờ', 'history.reload': '🔄 Tải lại', 'history.clear': '🗑️ Xoá tất cả',
     'history.empty': 'Chưa có ván cờ nào được lưu.', 'history.loading': 'Đang tải...',
     'history.moves': 'nước', 'history.noserver': '❌ Không thể kết nối server tại localhost:3001',
@@ -412,6 +444,38 @@ const T = {
     'label.strong': '✅ PROS', 'label.weak': '❌ CONS',
     'label.moves': '🎯 Moves',
     'diff.beginner': 'Beginner', 'diff.intermediate': 'Intermediate', 'diff.advanced': 'Advanced',
+    'tab.midgame': '🗡️ Middlegame',
+    'midgame.intro.title': '⚔️ What To Do In The Middlegame?',
+    'midgame.intro.text': 'The opening ends when all pieces are developed and the King is castled. The middlegame is where the real battle begins.',
+    'midgame.tactic.title': '🗡️ Chess Tactics',
+    'midgame.tactic.hint': '👆 Click each tactic to see how to use it',
+    'midgame.strategy.title': '🏛️ Middlegame Strategy',
+    'midgame.strategy.hint': '👆 Tactics win pieces — Strategy wins games',
+    'm1':'Fork — Attack 2 Pieces At Once','m2':'Pin — Lock Opponent Piece In Place',
+    'm3':'Skewer — The Reverse Pin','m4':'Discovered Attack — The Secret Weapon',
+    'm5':'Back Rank Weakness — Most Common Trap','m6':'Zwischenzug — Do Not Rush the Exchange',
+    'm7':'Piece Activity — Good Piece = Active Piece','m8':'Pawn Structure — The Backbone',
+    'm9':'Outpost — A Fortress in the Center','m10':'Open Files for Rooks',
+    'm1.why':'One move creates two threats — opponent can only handle one. Knights are most dangerous because of L-shape movement. A Knight fork on King + Rook guarantees winning the Rook.',
+    'm1.tags':['Win material for certain','2 threats from 1 move','Opponent must choose which to save','Knights especially dangerous'],
+    'm2.why':'Absolute pin to King: piece cannot move — illegal. Relative pin to Queen or Rook: piece dare not move or loses more valuable piece behind. Follow-up: pile more attackers on the pinned piece.',
+    'm2.tags':['Reduces opponent attacking power','Attack pinned piece with more pieces','Creates long-term weakness','Bishops and Rooks best for pinning'],
+    'm3.why':'Unlike a Pin, a Skewer forces the valuable piece to move and exposes the less-valuable piece behind it. Combine with check so the opponent has no choice.',
+    'm3.tags':['Win material for certain','Forces King from safe square','Combine with check for best effect','Bishops and Rooks on open lines'],
+    'm4.why':'Move piece A to reveal an attack by piece B. Creates 2 simultaneous threats. Discovered Check is even stronger — piece A can go anywhere because opponent must get out of check first.',
+    'm4.tags':['Creates 2 threats at once','Moving piece can also capture','Nearly impossible to fully defend','Discovered Check = almost free move'],
+    'm5.why':'After castling, the King is trapped behind h-g-f pawns. Without an escape square, opponent Rook delivers back rank checkmate. h3 or h6 gives the King a flight square.',
+    'm5.tags':['Avoid surprise checkmate','King gets an escape square','Spot back rank attack chances','h3/h6 is essential defense'],
+    'm6.why':'Instead of exchanging in expected order, insert a stronger move first. Always ask: is there something better before I take back? Opponents rarely see it coming.',
+    'm6.tags':['Win extra material unexpectedly','Improve position before exchanging','Opponent completely surprised','Separates good from average players'],
+    'm7.why':'An inactive piece is a dead piece. Before attacking, ask: which of my pieces is the worst? then improve it. Bad bishop blocked by own pawns is nearly useless. Knight on the rim is dim.',
+    'm7.tags':['Every piece contributes to attack','Stronger attacks with all pieces','No wasted dead pieces','Always improve your worst piece first'],
+    'm8.why':'Isolated pawn: must use pieces to guard — permanent weakness. Doubled pawn: 2 weaknesses same file. Passed pawn: no enemy pawns blocking promotion = decisive endgame advantage.',
+    'm8.tags':['Spot and exploit pawn weaknesses','Know when to create passed pawn','Avoid creating own weaknesses','Make the right plan'],
+    'm9.why':'An outpost is a square enemy pawns cannot attack, deep in opponent territory. A Knight on a central outpost controls key squares and is very hard to remove. Knights on outposts beat Bishops in closed positions.',
+    'm9.tags':['Knight beats Bishop in closed positions','Long-term control of key squares','Limits opponent piece mobility','Hard for opponent to break down'],
+    'm10.why':'Rooks are only powerful on open files with no blocking pawns. A Rook on the 7th rank attacks undeveloped pawns and traps the King. Double Rooks on the 7th = nearly checkmate.',
+    'm10.tags':['Rooks reach maximum potential','Control key files and ranks','Pressure on pawns and King','Double Rooks on 7th = nearly winning'],
     'history.title': '📜 Game History', 'history.reload': '🔄 Reload', 'history.clear': '🗑️ Clear All',
     'history.empty': 'No games saved yet.', 'history.loading': 'Loading...',
     'history.moves': 'moves', 'history.noserver': '❌ Cannot connect to server at localhost:3001',
@@ -478,6 +542,7 @@ function setLang(lang) {
   if (id === 'tab-practice') renderGame();
   if (id === 'tab-history') loadHistory();
   if (id === 'tab-basics') renderBasics();
+  if (id === 'tab-midgame') renderMidgame();
 }
 
 function renderBasics() {
@@ -1196,6 +1261,14 @@ function selBlack(id) {
   renderBlackDetail(curBlack);
 }
 
+
+function renderMidgame(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');const v=t(k);if(typeof v==='string')el.innerHTML=v;});
+  document.querySelectorAll('[data-mid-title]').forEach(el=>{const k=el.getAttribute('data-mid-title');const v=t(k);if(typeof v==='string'&&v!==k)el.textContent=v;});
+  document.querySelectorAll('[data-mid-why]').forEach(el=>{const k=el.getAttribute('data-mid-why');const v=t(k+'.why');if(typeof v==='string'&&v!==k+'.why')el.textContent=v;});
+  document.querySelectorAll('[data-mid-tags]').forEach(el=>{const k=el.getAttribute('data-mid-tags');const tags=t(k+'.tags');if(Array.isArray(tags))el.innerHTML=tags.map(tag=>`<span class="acc-tag">${tag}</span>`).join('');});
+}
+
 // ==== TABS ====
 function switchTab(evt,tab){
   document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
@@ -1207,9 +1280,13 @@ function switchTab(evt,tab){
   if(tab==='black'){renderBlackCards();renderBlackDetail(curBlack);}
   if(tab==='history')loadHistory();
   if(tab==='basics')renderBasics();
+  if(tab==='midgame')renderMidgame();
 }
 
 // ==== INIT ====
 renderOCards();renderDetail(openings[0]);
 applyInitialLang();
-document.addEventLis
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')oBack();if(e.key==='ArrowRight')oFwd();});
+</script>
+</body>
+</html>
